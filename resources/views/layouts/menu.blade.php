@@ -59,11 +59,7 @@
         <i class="c-sidebar-nav-icon cib-microsoft"></i>Tech News
     </a>
     @endcan
-    {{--@can('View College')
-    <a class="c-sidebar-nav-link" href="{{ route('college.index') }}">
-        <i class="c-sidebar-nav-icon cib-microsoft"></i>College
-    </a>
-    @endcan--}}
+   
     @can('View Testimonial')
     <li class="c-sidebar-nav-dropdown">
 
