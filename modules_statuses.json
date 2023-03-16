@@ -24,7 +24,7 @@
     "CustomerController": false,
     "Course": true,
     "CourseCategory": true,
-    "College": true,
+    "College": false,
     "Aboutus": true,
     "Gallery": true,
     "TechNews": true,
