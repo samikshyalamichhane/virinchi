@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="row">
-                @php
+                {{--@php
                 $countBlog = \Modules\Blog\Entities\Blog::latest()->count();
                 @endphp
                 <div class="col-sm-3">
@@ -26,7 +26,7 @@
                         <p class="card-text"></p>
                         </div>
                     </div>
-                </div>
+                </div>--}}
 
                {{-- @php
                 $countProject = \Modules\Project\Entities\Project::latest()->count();
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    @php
+    {{--@php
     $contactus = \Modules\Contactus\Entities\Contactus::where('type', 'Contact')->orderBy('created_at', 'DESC')->limit(8)->get();
     // dd($contactus);
     @endphp
@@ -100,7 +100,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div>--}}
 
 </div>
 @endsection
