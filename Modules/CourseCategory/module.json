@@ -1,0 +1,13 @@
+{
+    "name": "CourseCategory",
+    "alias": "coursecategory",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\CourseCategory\\Providers\\CourseCategoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

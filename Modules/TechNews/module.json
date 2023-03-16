@@ -1,0 +1,13 @@
+{
+    "name": "TechNews",
+    "alias": "technews",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\TechNews\\Providers\\TechNewsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

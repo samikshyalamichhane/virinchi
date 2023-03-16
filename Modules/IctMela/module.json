@@ -1,0 +1,13 @@
+{
+    "name": "IctMela",
+    "alias": "ictmela",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\IctMela\\Providers\\IctMelaServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
