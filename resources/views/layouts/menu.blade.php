@@ -18,11 +18,11 @@
         <i class="c-sidebar-nav-icon cil-user-follow"></i>Customers
     </a>
     @endcan --}}
-    @can('Update SiteInfo')
+    {{--@can('Update SiteInfo')
     <a class="c-sidebar-nav-link" href="{{ route('site.index') }}">
         <i class="c-sidebar-nav-icon fab fa-battle-net"></i>Site Settings
     </a>
-    @endcan
+    @endcan--}}
     @can('View Aboutus')
     <a class="c-sidebar-nav-link" href="{{ route('club.index') }}">
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Clubs
@@ -33,22 +33,22 @@
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Ict Mela
     </a>
     @endcan
-    @can('View Aboutus')
+    {{--@can('View Aboutus')
     <a class="c-sidebar-nav-link" href="{{ route('aboutus.index') }}">
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>About Us
     </a>
-    @endcan
+    @endcan--}}
     
     @can('View Gallery')
     <a class="c-sidebar-nav-link" href="{{ route('gallery.index') }}">
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Gallery
     </a>
     @endcan
-    @can('View Slider')
+    {{--@can('View Slider')
     <a class="c-sidebar-nav-link" href="{{ route('slider.index') }}">
         <i class="c-sidebar-nav-icon cib-microsoft"></i>Slider
     </a>
-    @endcan
+    @endcan--}}
     @can('View News')
     <a class="c-sidebar-nav-link" href="{{ route('events.index') }}">
         <i class="c-sidebar-nav-icon cib-microsoft"></i>Events
@@ -59,11 +59,11 @@
         <i class="c-sidebar-nav-icon cib-microsoft"></i>Tech News
     </a>
     @endcan
-    @can('View College')
+    {{--@can('View College')
     <a class="c-sidebar-nav-link" href="{{ route('college.index') }}">
         <i class="c-sidebar-nav-icon cib-microsoft"></i>College
     </a>
-    @endcan
+    @endcan--}}
     @can('View Testimonial')
     <li class="c-sidebar-nav-dropdown">
 
@@ -142,7 +142,7 @@
     </a>
     @endcan -->
     
-    <a class="c-sidebar-nav-link" href="{{ route('coursecategory.index') }}">
+    {{--<a class="c-sidebar-nav-link" href="{{ route('coursecategory.index') }}">
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Course Category
     </a>
     <a class="c-sidebar-nav-link" href="{{ route('courses.index') }}">
@@ -158,6 +158,6 @@
     <a class="c-sidebar-nav-link" href="{{ route('subscribe') }}">
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Subscribes List
     </a>
-    @endcan
+    @endcan--}}
 
 </li>
