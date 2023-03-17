@@ -77,9 +77,7 @@ class ClubController extends Controller
 
             $blog->title = $request->title;
             $blog->description = $request->description;
-            $blog->image_description = $request->image_description;
             $blog->publish = $request->publish ? 1 : 0;
-            $blog->author = $request->author;
             if ($request->hasFile('image')) {
                 $file = $request->image;
                 $filename = time() . '.' . $file->getClientOriginalExtension();

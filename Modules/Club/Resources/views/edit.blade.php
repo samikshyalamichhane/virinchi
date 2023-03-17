@@ -2,7 +2,7 @@
 @section('breadcrumb')
 <ol class="breadcrumb border-0 m-0">
     <li class="breadcrumb-item">Dashboard</li>
-    <li class="breadcrumb-item"><a href="{{ route('blog.index') }}">ICT Mela</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('club.index') }}">ICT Mela</a></li>
     {{-- <li class="breadcrumb-item active">Dashboard</li> --}}
 </ol>
 @endsection
@@ -14,23 +14,22 @@
             @if(Session::has('error'))
             @include('errors.catch-error',['catch_error'=>Session::get('error')])
             @endif
-            <form method="post" action="{{ route('blog.store') }}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('club.update',$club->id) }}" enctype="multipart/form-data">
                 @csrf
                 <div class="card">
-                    <div class="card-header"><i class="fa fa-align-justify"></i> Add ICT Mela</div>
+                    <div class="card-header"><i class="fa fa-align-justify"></i> Edit Club</div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="title">Title</label>
-                                    <input name="title" class="form-control" value="{{ $ictmela->title }}" required>
+                                    <input name="title" class="form-control" value="{{ $club->title }}" required>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea name="description" class="form-control"
-                                        required>{{ $ictmela->description }}</textarea>
+                                    <textarea name="description" class="form-control" required>{{ $club->description }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -41,10 +40,15 @@
                                         <label>Image</label>
                                         <div class="form-check checkbox">
                                             <input type="file" name="image" class="form-control" onchange="preview()">
-                                            <img id="frame" src="{{ Storage::url($ictmela->image) }}" width="100px"
-                                                height="100px" />
+                                            <img id="frame" src="{{ Storage::url($club->image) }}" width="100px" height="100px" />
                                         </div>
                                     </div>
+                                    <!-- <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="image_description">Image Description</label>
+                                            <input name="image_description" class="form-control" value="{{ $club->image_description }}">
+                                        </div>
+                                    </div> -->
                                     {{--<div class="col-6 colxs-12">
                                         <label>Blog Banner Image</label>
                                         <div class="form-check checkbox">
@@ -62,8 +66,7 @@
                                 <div class="row">
                                     <div class="col-3 colxs-12">
                                         <div class="form-check checkbox">
-                                            <input class="form-check-input" id="publish" name="publish" type="checkbox"
-                                                value="true">
+                                            <input class="form-check-input" id="publish" name="publish" type="checkbox" value="true"{{$club->publish=1 ? 'checked' : ''}}>
                                             <label class="form-check-label" for="publish">Publish</label>
                                         </div>
                                     </div>
@@ -85,10 +88,11 @@
 <script src="https://cdn.ckeditor.com/4.18.0/standard-all/ckeditor.js"></script>
 <script>
     function preview() {
-        frame.src=URL.createObjectURL(event.target.files[0]);
+        frame.src = URL.createObjectURL(event.target.files[0]);
     }
+
     function BlogBannerpreview() {
-        frameBlogBanner.src=URL.createObjectURL(event.target.files[0]);
+        frameBlogBanner.src = URL.createObjectURL(event.target.files[0]);
     }
 </script>
 <script>
@@ -98,7 +102,7 @@
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
         extraPlugins: 'image2',
-        
+
     };
 </script>
 <script>

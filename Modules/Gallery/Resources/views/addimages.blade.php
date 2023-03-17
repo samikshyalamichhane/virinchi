@@ -2,7 +2,7 @@
 @section('breadcrumb')
 <ol class="breadcrumb border-0 m-0">
     <li class="breadcrumb-item">Dashboard</li>
-    <li class="breadcrumb-item"><a >Images</a></li>
+    <li class="breadcrumb-item"><a>Images</a></li>
 </ol>
 @endsection
 @section('content')
@@ -63,7 +63,7 @@
                                 <th>Action</th>
                             </tr>
                         </thead>
-                        <tbody >
+                        <tbody>
                             @forelse ($images as $key=>$image)
                             <tr data-id="{{$image->id}}">
                                 <td>{{$key+1}}</td>
@@ -71,13 +71,11 @@
                                     <img src="{{Storage::url('images/gallery/'.$image->image)}}" height="100">
                                 </td>
 
-                                <td>{!! $image->publish?'<span
-                                        class="badge badge-pill badge-success">Active</span>':'<span
-                                        class="badge badge-pill badge-warning">Inactive</span>' !!}</td>
+                                <td>{!! $image->publish?'<span class="badge badge-pill badge-success">Active</span>':'<span class="badge badge-pill badge-warning">Inactive</span>' !!}</td>
                                 <td>
                                     <button class="btn btn-sm btn-success addAltTag" data-id="{{$image->id}}" data-img="{{$image->img_desc}}">Edit Image Description</button>
 
-                                     <a class="btn btn-sm btn-danger" href="{{route('images.delete',$image->id)}}">Delete</a>
+                                    <a class="btn btn-sm btn-danger" href="{{route('images.delete',$image->id)}}">Delete</a>
                                 </td>
                             </tr>
                             @empty
@@ -93,13 +91,13 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="myModal" role="dialog">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Add Alt Tag in Image</h4>
+                <h5 class="modal-title" id="exampleModalLabel">Add Image Description</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="{{route('updateImageDesc')}}" method="post">
@@ -122,20 +120,20 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
-
     </div>
 </div>
 @endsection
 @push('page_scripts')
 <script>
     function preview() {
-        frame.src=URL.createObjectURL(event.target.files[0]);
+        frame.src = URL.createObjectURL(event.target.files[0]);
     }
+
     function preview1() {
-        frame1.src=URL.createObjectURL(event.target.files[0]);
+        frame1.src = URL.createObjectURL(event.target.files[0]);
     }
 </script>
 <script>
@@ -152,10 +150,10 @@
             id = $(this).data('id');
             data = $(this).data('img');
             console.log(id)
-            $('#myModal').modal('show');
-            $("#myModal #title").val(id);
-            $("#myModal #img_d").val(data);
-            $("#myModal #product_name").val(title);
+            $('#exampleModal').modal('show');
+            $("#exampleModal #title").val(id);
+            $("#exampleModal #img_d").val(data);
+            $("#exampleModal #product_name").val(title);
         });
 
     });
