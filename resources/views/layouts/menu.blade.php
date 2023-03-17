@@ -70,13 +70,16 @@
             <li><a class="c-sidebar-nav-link" href="{{ route('testimonial.create') }}">
             Testimonial create
         </a></li>
+        <li><a class="c-sidebar-nav-link" href="{{ route('testimonial.index') }}">
+            Testimonial List
+        </a></li>
         <li><a class="c-sidebar-nav-link" href="{{ route('testimonialcategory.create') }}">
             Testimonial Category List
         </a></li>
         </li>
-        <li><a class="c-sidebar-nav-link" href="{{ route('testimonialcategory.create') }}">
+        <!-- <li><a class="c-sidebar-nav-link" href="{{ route('testimonialcategory.create') }}">
             Testimonial Category Create
-        </a></li>
+        </a></li> -->
         </ul>
     </li>
     @endcan

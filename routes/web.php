@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\AdminLoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,12 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/dashboard', function () {
-    if(auth()->user()->hasAnyRole('customer')){
-        abort(403);
-    }
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     if(auth()->user()->hasAnyRole('customer')){
+//         abort(403);
+//     }
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
+Route::get('/dashboard', [AdminLoginController::class, 'dashboard'])->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__ . '/auth.php';
 Auth::routes();

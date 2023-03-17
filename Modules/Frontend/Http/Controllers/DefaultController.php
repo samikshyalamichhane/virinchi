@@ -60,7 +60,7 @@ class DefaultController extends Controller
             'date'=>'required|date_format:Y-m-d|after_or_equal:'.$today,
             'time'=>'required',
             'checkbox'=>'required',
-        ],['checkbox.required'=>'Please check privacy policy chcekbox']);
+        ],['checkbox.required'=>'Please check privacy policy checkbox']);
         $data = [
             'name'=>$request->name,
             'email'=>$request->email,
