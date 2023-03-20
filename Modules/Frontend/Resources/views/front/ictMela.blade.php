@@ -25,21 +25,21 @@
                </div>
             </div>
          </div>
+         @foreach($details as $detail)
          <div class="oppwait saa sao newtitle">
             <div class="container">
-               <h2>ICT Mela 2.0</h2>
+               <h2>{{$detail->title}}</h2>
                <div class="row">
-                  <div class="col-md-9">
+                  <div class="col-md-8">
                      <div class="oppwait-left">
-                        <!--<span>20-Dec-2022</span>-->
-                        <p>After a year gap due to the COVID-19 pandemic, Virinchi College organized its second editoin of ICT Mela 2.0 on April 21 till April 23, 2022. It was a 3-days exclusive event conducted at Virinchi College premise. This year ICT Mela was way more different than the first one with 20+ ICT solutions created by BICT students for various day-to-day household and corporate problems, from hand gesture controlled car to automatic plant watering system, home automation to foot piano, smart bin to water level monitoring system , firefighting robot to attendance system, buzz maze wire to smart mirror. Smart Mirror was made for the first time and exhibited in the country.</p>
-                        <p>Major attractions included ROBO RAMP RACE where 10+ schools participated in an 80 ft track with various obstacles. Visitors took the mesmerizing experience of INFINITY MIRROR ROOM. For the first time, a squid game was organized among the visitors where the winners won cash prize of Rs.13,000. Other attractions included holographic displays, large sized infinity mirror cube, drone photo-shoot, live music and food stalls. In the span of 3 days around 2,700 visitors experienced the event.</p>
-                        <p>During the event various workshop and training were also conducted for the visitors by the students. From short training on finding vulnerabilities to Jarvis OS and UI/UX workshops were conducted.  In the meantime, a panel discussion was conducted on the second day of event on the topic “Championing ICT Innovation through Academia” among famous ICT and engineering professionals and intellectuals from various private and government organizations of the country. Program was moderated by our program director Dr. Pawan Kumar Sharma. The post-event exhibition was held for two weeks for the visitors.</p>
+                       {!! $detail->description !!}
                      </div>
                   </div>
+                  @if($detail->resources)
                   <div class="col-md-3 tr">
                      <h5>Top Resources</h5>
-                     <ul>
+                     {!! $detail->resources !!}
+                     <!-- <ul>
                         <li><span>01.</span><a href="#"><u> Smart Mirror</u></a></li>
                         <li><span>02.</span><a href="#"><u>Fire Fighting Robot</u></a></li>
                         <li><span>03.</span><a href="#"><u> Robo Ramp Race</u></a></li>
@@ -50,12 +50,21 @@
                         <li><span>08.</span><a href="#"><u> Hand Gesture Car</u></a></li>
                         <li><span>09.</span><a href="#"><u> Infinity Cube</u></a></li>
                         <li><span>10.</span><a href="#"><u> Squid Game</u></a></li>
-                     </ul>
+                     </ul> -->
                   </div>
+                  @endif
+                  @if($detail->image)
+                  <div class="col-md-4 nimg text-center">
+                     <!--<a href="#"><img src="assets/img/Club.jpg" alt="some"></a>-->
+                     <img src="{{Storage::url($detail->image)}}" alt="some">
+                     <p>{{$detail->image_description}}</p>
+                  </div>
+                  @endif
                </div>
             </div>
          </div>
-         <div class="newictmela newtitle">
+         @endforeach
+         {{--<div class="newictmela newtitle">
             <div class="container">
                <h2>ICT Mela 1.0</h2>
                <div class="row">
@@ -70,7 +79,7 @@
                   </div>
                </div>
             </div>
-         </div>
+         </div>--}}
          <div class="life photo-gallery ictp newinside" id="photo-gallery">
             <div class="container">
                <div class="gallery-content">

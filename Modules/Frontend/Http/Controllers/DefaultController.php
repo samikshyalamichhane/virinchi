@@ -33,7 +33,7 @@ class DefaultController extends Controller
         return view('frontend::front.college');
     }
     public function ictMela(){
-        $details = IctMela::where('publish',1)->get();
+        $details = IctMela::latest()->where('publish',1)->get();
         $gallery = ImageGallery::with('imagess')->where('slug','ict-mela')->first();
         return view('frontend::front.ictMela',compact('details','gallery'));
     }

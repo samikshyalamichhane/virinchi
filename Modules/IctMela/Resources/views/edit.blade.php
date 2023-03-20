@@ -28,6 +28,13 @@
                             </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
+                                    <label for="resources">Top Resources</label>
+                                    <textarea name="resources" class="form-control"
+                                        required>{{ $ictmela->descriptionresources }}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
                                     <label for="description">Description</label>
                                     <textarea name="description" class="form-control" required>{{ $ictmela->description }}</textarea>
                                 </div>

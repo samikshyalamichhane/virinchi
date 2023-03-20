@@ -18,6 +18,7 @@ class CreateIctMelasTable extends Migration
             $table->text('title')->nullable();
             $table->string('image_description')->nullable();
             $table->text('description')->nullable();
+            $table->text('resources')->nullable();
             $table->string('image')->nullable();
             $table->boolean('publish')->default(1);
 

@@ -39,6 +39,7 @@ class IctMelaController extends Controller
             $blog = new IctMela();
             $blog->title = $request->title;
             $blog->description = $request->description;
+            $blog->resources = $request->resources;
             $blog->image_description = $request->image_description;
             $blog->publish = $request->publish ? 1 : 0;
             if ($request->hasFile('image')) {
@@ -79,6 +80,7 @@ class IctMelaController extends Controller
 
             $blog->title = $request->title;
             $blog->description = $request->description;
+            $blog->resources = $request->resources;
             $blog->image_description = $request->image_description;
             $blog->publish = $request->publish ? 1 : 0;
             if ($request->hasFile('image')) {
