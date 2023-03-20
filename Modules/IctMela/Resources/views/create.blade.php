@@ -115,6 +115,7 @@
 </script>
 <script>
     CKEDITOR.replace('description', options);
+    CKEDITOR.replace('resources', options);
 </script>
 
 @endpush

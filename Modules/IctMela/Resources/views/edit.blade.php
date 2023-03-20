@@ -30,7 +30,7 @@
                                 <div class="form-group">
                                     <label for="resources">Top Resources</label>
                                     <textarea name="resources" class="form-control"
-                                        required>{{ $ictmela->descriptionresources }}</textarea>
+                                        required>{{ $ictmela->resources }}</textarea>
                                 </div>
                             </div>
                             <div class="col-sm-12">
@@ -114,6 +114,8 @@
 </script>
 <script>
     CKEDITOR.replace('description', options);
+    CKEDITOR.replace('resources', options);
+
 </script>
 
 @endpush
