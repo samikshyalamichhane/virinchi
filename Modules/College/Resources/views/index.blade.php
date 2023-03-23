@@ -7,11 +7,6 @@
 
     {{-- <li class="breadcrumb-item active">Dashboard</li> --}}
 </ol>
-@can('Add college')
-<button class="float-right p-2 mb-2 btn btn-sm btn-primary" style="margin-top:10px"
-    onclick="window.location='{{ route('college.create') }}'">Add
-    college</button>
-@endcan
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -33,9 +28,9 @@
                         <thead>
                             <tr>
                                 <th>S.N</th>
-                                <th>Name</th>
-                                <th>Image</th>
-                                <th>Status</th>
+                                <th>GRADUATE ON TIME</th>
+                                <th>INDUSTRY READINESS</th>
+                                <th>GRADUATE EMPLOYED</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -43,18 +38,13 @@
                             @forelse ($colleges as $key=>$college)
                             <tr>
                                 <td>{{ $key+1 }}</td>
-                                <td>{{ $college->title }}</td>
-                                <td>
-                                    <img src="{{Storage::url($college->image)}}" height="100">
-                                </td>
-                                
-                                <td>{!! $college->publish?'<span
-                                        class="badge badge-pill badge-success">Active</span>':'<span
-                                        class="badge badge-pill badge-warning">Inactive</span>' !!}</td>
+                                <td>{{ $college->graduate_on_time }}</td>
+                                <td>{{ $college->industry_readiness }}</td>
+                                <td>{{ $college->graduate_employed }}</td>
                                 <td>
                                     <button class="btn btn-xs btn-info"
                                     onclick="window.location=`{{ route('college.edit',['id'=>$college->id]) }}`">Edit</button>
-                                    <button data-question="Are you sure to delete the data?" data-toggle="confirm" data-id="{{ $college->id }}" class="btn btn-xs btn-danger">Delete</button>
+                                    <!-- <button data-question="Are you sure to delete the data?" data-toggle="confirm" data-id="{{ $college->id }}" class="btn btn-xs btn-danger">Delete</button> -->
                                 </td>
                             </tr>
                             @empty

@@ -334,13 +334,13 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="col-form-label">Pages Banner Image</label>
+                            <label class="col-form-label">About Page Banner Image</label>
                             <div class="col-form-label">
                                 <div class="row">
                                     <div class="col-12 colxs-12">
                                         <div class="form-check checkbox">
-                                            <input type="file" name="page_banner_image" class="form-control" onchange="pagebannerPreview()">
-                                            <img id="page_banner_image" src="{{ Storage::url($site->page_banner_image) }}" width="100px" height="100px" />
+                                            <input type="file" name="about_banner_image" class="form-control" onchange="aboutbannerPreview()">
+                                            <img id="about_banner_image" src="{{ Storage::url($site->about_banner_image) }}" width="100px" height="100px" />
                                         </div>
                                     </div>
 
@@ -349,13 +349,13 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="col-form-label">About Us Image</label>
+                            <label class="col-form-label">Smart By Intellect Banner Image</label>
                             <div class="col-form-label">
                                 <div class="row">
                                     <div class="col-12 colxs-12">
                                         <div class="form-check checkbox">
-                                            <input type="file" name="about_us_image" class="form-control" onchange="abouutUsPreview()">
-                                            <img id="about_us_image" src="{{ Storage::url($site->about_us_image) }}" width="100px" height="100px" />
+                                            <input type="file" name="smart_image" class="form-control" onchange="smartbannerPreview()">
+                                            <img id="smart_image" src="{{ Storage::url($site->smart_image) }}" width="100px" height="100px" />
                                         </div>
                                     </div>
 
@@ -364,13 +364,73 @@
                         </div>
 
                         <div class="col-sm-4">
-                            <label class="col-form-label">Why Choose Us Image</label>
+                            <label class="col-form-label">Club Banner Image</label>
                             <div class="col-form-label">
                                 <div class="row">
                                     <div class="col-12 colxs-12">
                                         <div class="form-check checkbox">
-                                            <input type="file" name="why_choose_us_image" class="form-control" onchange="whyChooseUsPreview()">
-                                            <img id="why_choose_us_image" src="{{ Storage::url($site->why_choose_us_image) }}" width="100px" height="100px" />
+                                            <input type="file" name="club_image" class="form-control" onchange="clubbannerPreview()">
+                                            <img id="club_image" src="{{ Storage::url($site->club_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="col-form-label">Ict Mela Banner Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="ictmela_image" class="form-control" onchange="ictmelabannerPreview()">
+                                            <img id="ictmela_image" src="{{ Storage::url($site->ictmela_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="col-form-label">Admission Page Banner Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="admission_image" class="form-control" onchange="abouutUsPreview()">
+                                            <img id="admission_image" src="{{ Storage::url($site->admission_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="col-form-label">College Banner Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="college_image" class="form-control" onchange="whyChooseUsPreview()">
+                                            <img id="college_image" src="{{ Storage::url($site->college_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label class="col-form-label">Affiliation Page Banner Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="affiliation_image" class="form-control" onchange="whyChooseUsPreview()">
+                                            <img id="affiliation_image" src="{{ Storage::url($site->affiliation_image) }}" width="100px" height="100px" />
                                         </div>
                                     </div>
 
@@ -389,6 +449,8 @@
 
 @endsection
 @push('page_scripts')
+<script src="https://cdn.ckeditor.com/4.18.0/standard-all/ckeditor.js"></script>
+
 <script>
     function headerPreview() {
         header_logo.src = URL.createObjectURL(event.target.files[0]);
@@ -419,18 +481,17 @@
     }
 </script>
 <script>
-    $('textarea').summernote({
-        toolbar: [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['fontsize', ['fontsize']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['view', ['fullscreen', 'codeview', 'help']],
-        ],
-    });
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+        extraPlugins: 'image2',
+        
+    };
+</script>
+<script>
+    CKEDITOR.replace('description', options);
+    CKEDITOR.replace('resources', options);
 </script>
 @endpush

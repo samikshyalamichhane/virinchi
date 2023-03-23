@@ -24,10 +24,11 @@
     "CustomerController": false,
     "Course": true,
     "CourseCategory": true,
-    "College": false,
+    "College": true,
     "Aboutus": true,
     "Gallery": true,
     "TechNews": true,
     "IctMela": true,
-    "Club": true
+    "Club": true,
+    "EducationModel": true
 }

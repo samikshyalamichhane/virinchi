@@ -37,7 +37,7 @@ class PageController extends Controller
         $this->validate($request, [
             'title' => 'required|max:500',
             'description' => "required",
-            'page_full_description' => "required",
+            'page_full_description' => "nullable",
             'image' => 'nullable|mimes:jpg,png,jpeg,gif,svg|max:5000'
         ]);
         try {
@@ -84,7 +84,7 @@ class PageController extends Controller
         $this->validate($request, [
             'title' => 'required|max:500',
             'description' => "required",
-            'page_full_description' => "required",
+            'page_full_description' => "nullable",
             'image' => 'nullable|mimes:jpg,png,jpeg,gif,svg|max:5000'
         ]);
         try {

@@ -54,6 +54,10 @@ class CreateIctMelasTable extends Migration
      */
     public function down()
     {
+        DB::table('permissions')->where('name', 'View IctMela')->delete();
+        DB::table('permissions')->where('name', 'Add IctMela')->delete();
+        DB::table('permissions')->where('name', 'Edit IctMela')->delete();
+        DB::table('permissions')->where('name', 'Delete IctMela')->delete();
         Schema::dropIfExists('ict_melas');
     }
 }

@@ -17,17 +17,7 @@
                <div class="sametext nosame">
                   <div class="college-info">
                      <div class="college-info-box">
-                        <div class="section-title">
-                           <!--<h2>  WE ARE PART OF A UNIQUE COLLABORATIVE MULTINATIONAL<br> UNIVERSITY, AeU(an initiation of Asian Co-operation<br> Dialogue of 34 countries)</h2>-->
-                           <h2><span>BICT</span> and<span> MBA </span>courses at Virinchi offers students boundless opportunities to pursue their passions and collaborate on solving complex global problems.</h2>
-                        </div>
-                        <p>
-                        </p>
-                        <p>Virinchi College always believes in building cognitive skills in all Virinchians, thus preparing workforce for the future able to acquire and implement knowledge for dynamic environment.
-                        </p>
-                        <p>
-                           We offer relevant courses for the current and future job market. We are working to leverage pedagogical strategies and technologies to develop students’ critical thinking, creative abilities, entrepreneurial and communication skills.
-                        </p>
+                        {!! $detail->description !!}
                      </div>
                   </div>
                </div>
@@ -47,7 +37,7 @@
                                     <h2 class="college-counter-title">Graduate<br> on Time</h2>
                                  </div>
                                  <div class="college-counter-number">
-                                    <span class="counter">99</span>%
+                                    <span class="counter">{{$college->graduate_on_time}}</span>%
                                  </div>
                               </div>
                            </div>
@@ -57,7 +47,7 @@
                                     <h2 class="college-counter-title">Industry Readiness</h2>
                                  </div>
                                  <div class="college-counter-number">
-                                    <span class="counter">98</span>%
+                                    <span class="counter">{{$college->industry_readiness}}</span>%
                                  </div>
                               </div>
                            </div>
@@ -67,7 +57,7 @@
                                     <h2 class="college-counter-title">Graduate Employed</h2>
                                  </div>
                                  <div class="college-counter-number">
-                                    <span class="counter">99</span>%
+                                    <span class="counter">{{$college->graduate_employed}}</span>%
                                  </div>
                               </div>
                            </div>
@@ -81,15 +71,16 @@
          <div class="whoffer ooog">
             <div class="container">
                <h2 class="course-title mod">Education <span>Model</span></h2>
-               <p>Today’s students must be competent to compete in the highly competitive global economy. Today’s generation needs to be more job ready with practical knowledge, if they are to compete for the jobs of tomorrow. This simple yet valuable perspective has shaped our education model to transform students to workforce at Virinchi College.</p>
+               {!! $college->education_model_description !!}
                <div class="row mb-5">
+                  @foreach($details as $data)
                   <div class="col-md-4">
                      <div class="content offerimg oppbox">
                         <a href="#" target="_blank">
                            <div class="content-overlay"></div>
-                           <img class="content-image" src="{{asset('front/assets/img/Practicing Professional.jpeg')}}">
+                           <img class="content-image" src="{{Storage::url($data->image)}}">
                            <div class="content-details fadeIn-bottom">
-                              <h5 class="content-title">Practicing Professionals</h5>
+                              <h5 class="content-title">{{$data->title}}</h5>
                            </div>
                         </a>
                      </div>
@@ -97,11 +88,12 @@
                      <!--    <img src="assets/img/Practicing Professional.jpeg" alt="some">-->
                      <!--</div>-->
                      <div class="offerdetail box2 vboxes od">
-                        <p>We bring industry experience in to the classroom. Our faculties are experienced industry experts bringing a real world perspective in our programs. The vast majority of students will begin careers in industry after graduation and therefore would benefit from the experience and lessons learned from those who have really encountered the problems while functioning as a full time practicing professionals. Students won’t feel new to the industrial environment as they will already have taste of it in the college itself. </p>
+                        {!! $data->description !!}
                         <!--<div class="read-more">Read More</div>-->
                      </div>
                   </div>
-                  <div class="col-md-4">
+                  @endforeach
+                  {{--<div class="col-md-4">
                      <div class="content offerimg oppbox">
                         <a href="#" target="_blank">
                            <div class="content-overlay"></div>
@@ -128,7 +120,7 @@
                      <div class="offerdetail box1 vboxes">
                         <p>Our curriculum helps faculties stay at the forefront of innovation so that they can equip students with the skills they need to get<br> hired in one of the fastest-growing industries.</p>
                      </div>
-                  </div>
+                  </div>--}}
                </div>
             </div>
          </div>

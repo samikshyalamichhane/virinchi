@@ -45,9 +45,7 @@
                <div class="">
                   <div class="sametext nosame">
                      <div class="sec-title">
-                        <h2><span>Smart-</span> perhaps a cliché today, for us, it’s the goal - to make our students smart to create an accomplished life. Once a Virinchian, you are set for a wonderful career as an entrepreneur or highly sought human resource.</h2>
-                        <p>Every day at Virinchi is brick by brick accumulation of knowledge and experience in a pleasant environment. We design each brick with utmost sincerity and thoughtfulness so that these add to the pupil’s intellectuality to solve complex of problems at ease, professionally and personally.</p>
-                        <p>At each touch point, be it with infrastructure of the college or teachers or peers, we ensure, each individual brings change in oneself so that one’s cognitive ability is at its best. We promote team work, and our students are best performers in any team. We don’t just talk about creativity, we have courses designed to teach students how one can be creative.</p>
+                     {!! $detail->description !!}
                      </div>
                   </div>
                </div>

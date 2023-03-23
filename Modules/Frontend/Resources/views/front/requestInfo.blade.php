@@ -100,7 +100,7 @@
                <div class="row">
                   <div class="form-group col-md-6 col-12">
                      <label class="bold-label">HIGH SCHOOL OR COLLEGE NAME <strong>*</strong></label>
-                     <input type="text" class="form-control" id="" placeholder="" name="parent_email">
+                     <input type="text" class="form-control" id="" placeholder="" name="high_school">
                   </div>
                </div>
                <div class="row">

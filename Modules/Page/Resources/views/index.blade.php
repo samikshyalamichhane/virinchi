@@ -35,8 +35,6 @@
                                 <th>S.N</th>
                                 <th>Title</th>
                                 <th>Slug</th>
-                                <th>Short Description</th>
-                                <th>Full Description</th>
                                 <th>Image</th>
                                 <th>Status</th>
                                 <th>Action</th>
@@ -49,13 +47,7 @@
                                 <td>{{ $page->title }}</td>
                                 <td>{{ $page->slug }}</td>
                                 <td>
-                                    {{ Str::limit(html_entity_decode(strip_tags($page->description)),100,'......') }}
-                                </td>
-                                <td>
-                                    {{ Str::limit(html_entity_decode(strip_tags($page->page_full_description)),200,'......') }}
-                                </td>
-                                <td>
-                                    <img src="{{Storage::url($page->image)}}" height="100">
+                                    <img src="{{Storage::url($page->image)}}" height="100" width="100">
                                 </td>
                                 <td>
                                     {!! $page->publish?'<span

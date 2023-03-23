@@ -15,11 +15,10 @@ class CreateCollegesTable extends Migration
     {
         Schema::create('colleges', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->string('slug')->nullable();
-            $table->text('description')->nullable();
-            $table->string('image')->nullable();
-            $table->string('college_inner_banner')->nullable();
+            $table->string('graduate_on_time')->nullable();
+            $table->string('industry_readiness')->nullable();
+            $table->text('graduate_employed')->nullable();
+            $table->text('education_model_description')->nullable();
             $table->string('meta_title')->nullable();
             $table->string('meta_keyword')->nullable();
             $table->text('meta_description')->nullable();
@@ -27,6 +26,26 @@ class CreateCollegesTable extends Migration
 
             $table->timestamps();
         });
+        DB::table('permissions')->insert([
+            'name' => 'View College',
+            'guard_name' => 'web',
+            'group' => 'College'
+        ]);
+        DB::table('permissions')->insert([
+            'name' => 'Add College',
+            'guard_name' => 'web',
+            'group' => 'College'
+        ]);
+        DB::table('permissions')->insert([
+            'name' => 'Edit College',
+            'guard_name' => 'web',
+            'group' => 'College'
+        ]);
+        DB::table('permissions')->insert([
+            'name' => 'Delete College',
+            'guard_name' => 'web',
+            'group' => 'College'
+        ]);
     }
 
     /**
@@ -36,6 +55,10 @@ class CreateCollegesTable extends Migration
      */
     public function down()
     {
+        DB::table('permissions')->where('name', 'View College')->delete();
+        DB::table('permissions')->where('name', 'Add College')->delete();
+        DB::table('permissions')->where('name', 'Edit College')->delete();
+        DB::table('permissions')->where('name', 'Delete College')->delete();
         Schema::dropIfExists('colleges');
     }
 }

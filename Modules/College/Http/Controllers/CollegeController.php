@@ -29,32 +29,18 @@ class CollegeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:500',
+            'graduate_on_time' => 'nullable|max:500',
             'description' => "nullable",
             'image' => 'nullable|mimes:jpg,png,jpeg,gif,svg|max:5000'
         ]);
         try {
             $college = new College;
-            $college->title = $request->title;
-            $college->description = $request->description;
-            // $college->meta_title = $request->meta_title;
-            // $college->meta_keyword = $request->meta_keyword;
+            $college->graduate_on_time = $request->graduate_on_time;
+            $college->industry_readiness = $request->industry_readiness;
+            $college->graduate_employed = $request->graduate_employed;
+            $college->education_model_description = $request->education_model_description;
             // $college->meta_description = $request->meta_description;
-            $college->publish = $request->publish ? 1 : 0;
-            if ($request->hasFile('image')) {
-                $file = $request->image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
-                // $path = Storage::put('public/teams', $file, 'public');
-                $path = $file->storeAs('public/college', $filename);
-                $college->image = $path;
-            }
-            // if ($request->hasFile('college_inner_banner')) {
-            //     $file = $request->college_inner_banner;
-            //     $filename = time() . '.' . $file->getClientOriginalExtension();
-            //     // $path = Storage::put('public/teams', $file, 'public');
-            //     $path = $file->storeAs('public/college', $filename);
-            //     $college->college_inner_banner = $path;
-            // }
+            
             $college->save();
             return redirect()->route('college.index')->with('success', 'college created successfully');
         } catch (\Exception $e) {
@@ -72,34 +58,16 @@ class CollegeController extends Controller
     {
         $college =  College::findOrFail($id);
         $this->validate($request, [
-            'title' => 'required|max:500',
+            'graduate_on_time' => 'nullable|max:500',
             'description' => "nullable",
             'image' => 'nullable|mimes:jpg,png,jpeg,gif,svg|max:5000'
         ]);
         try {
 
-            $college->title = $request->title;
-            $college->description = $request->description;
-            // $college->college_full_description = $request->college_full_description;
-            // $college->meta_title = $request->meta_title;
-            // $college->meta_keyword = $request->meta_keyword;
-            // $college->meta_description = $request->meta_description;
-            $college->publish = $request->publish ? 1 : 0;
-            // $college->author = $request->author;
-            if ($request->hasFile('image')) {
-                $file = $request->image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
-                // $path = Storage::put('public/teams', $file, 'public');
-                $path = $file->storeAs('public/college', $filename);
-                $college->image = $path;
-            }
-            // if ($request->hasFile('college_inner_banner')) {
-            //     $file = $request->college_inner_banner;
-            //     $filename = time() . '.' . $file->getClientOriginalExtension();
-            //     // $path = Storage::put('public/teams', $file, 'public');
-            //     $path = $file->storeAs('public/college', $filename);
-            //     $college->college_inner_banner = $path;
-            // }
+            $college->graduate_on_time = $request->graduate_on_time;
+            $college->industry_readiness = $request->industry_readiness;
+            $college->graduate_employed = $request->graduate_employed;
+            $college->education_model_description = $request->education_model_description;
             $college->save();
             return redirect()->route('college.index')->with('success', 'college updated successfully');
         } catch (\Exception $e) {

@@ -20,85 +20,35 @@
                     <div class="card-header"><i class="fa fa-align-justify"></i> Add college</div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-sm-6">
+                            <!-- <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="title">Title</label>
                                     <input name="title" class="form-control" value="{{ old('title') }}" required>
                                 </div>
-                            </div>
-                            <!-- <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="author">Author</label>
-                                    <input name="author" class="form-control" value="{{ old('author') }}" required>
-                                </div>
                             </div> -->
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="graduate_on_time">GRADUATE ON TIME</label>
+                                    <input name="graduate_on_time" class="form-control" value="{{ old('graduate_on_time') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="industry_readiness">INDUSTRY READINESS</label>
+                                    <input name="industry_readiness" class="form-control" value="{{ old('industry_readiness') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="graduate_employed">GRADUATE EMPLOYED</label>
+                                    <input name="graduate_employed" class="form-control" value="{{ old('graduate_employed') }}" required>
+                                </div>
+                            </div>
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="description">College Description</label>
-                                    <textarea name="description" class="form-control"
-                                        required>{{ old('description') }}</textarea>
-                                </div>
-                            </div>
-                            <!-- <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="college_full_description">college Full Description</label>
-                                    <textarea name="college_full_description" class="form-control"
-                                        required>{{ old('college_full_description') }}</textarea>
-                                </div>
-                            </div> -->
-                            <!-- <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="meta_title">Meta Title</label>
-                                    <input name="meta_title" class="form-control" value="{{ old('meta_title') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="meta_keyword">Meta Keyword</label>
-                                    <input name="meta_keyword" class="form-control" value="{{ old('meta_keyword') }}">
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="meta_description">Meta Description</label>
-                                    <input name="meta_description" class="form-control" value="{{ old('meta_description') }}">
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-9 col-form-label">
-                                <div class="row">
-                                    <div class="col-6 colxs-12">
-                                        <label>College Image</label>
-                                        <div class="form-check checkbox">
-                                            <input type="file" name="image" class="form-control" onchange="preview()">
-                                            <img id="frame" src="" width="100px" height="100px" />
-                                        </div>
-                                    </div>
-                                    <!-- <div class="col-6 colxs-12">
-                                        <label>college Banner Image</label>
-                                        <div class="form-check checkbox">
-                                            <input type="file" name="college_inner_banner" class="form-control" onchange="collegeBannerpreview()">
-                                            <img id="framecollegeBanner" src="" width="100px" height="100px" />
-                                        </div>
-                                    </div> -->
-
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-md-1 col-form-label">Publish</label>
-                            <div class="col-md-9 col-form-label">
-                                <div class="row">
-                                    <div class="col-3 colxs-12">
-                                        <div class="form-check checkbox">
-                                            <input class="form-check-input" id="publish" name="publish" type="checkbox"
-                                                value="true">
-                                            <label class="form-check-label" for="publish">Publish</label>
-                                        </div>
-                                    </div>
-
+                                    <label for="education_model_description">Education Model Description</label>
+                                    <textarea name="education_model_description" class="form-control"
+                                        required>{{ old('education_model_description') }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -135,6 +85,6 @@
     };
 </script>
 <script>
-    CKEDITOR.replace('description', options);
+    CKEDITOR.replace('education_model_description', options);
 </script>
 @endpush

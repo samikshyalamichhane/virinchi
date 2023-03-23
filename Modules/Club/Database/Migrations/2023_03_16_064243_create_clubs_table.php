@@ -52,6 +52,10 @@ class CreateClubsTable extends Migration
      */
     public function down()
     {
+        DB::table('permissions')->where('name', 'View Clubs')->delete();
+        DB::table('permissions')->where('name', 'Add Clubs')->delete();
+        DB::table('permissions')->where('name', 'Edit Clubs')->delete();
+        DB::table('permissions')->where('name', 'Delete Clubs')->delete();
         Schema::dropIfExists('clubs');
     }
 }

@@ -18,11 +18,11 @@
         <i class="c-sidebar-nav-icon cil-user-follow"></i>Customers
     </a>
     @endcan --}}
-    {{--@can('Update SiteInfo')
+    @can('Update SiteInfo')
     <a class="c-sidebar-nav-link" href="{{ route('site.index') }}">
         <i class="c-sidebar-nav-icon fab fa-battle-net"></i>Site Settings
     </a>
-    @endcan--}}
+    @endcan
     @can('View Aboutus')
     <a class="c-sidebar-nav-link" href="{{ route('club.index') }}">
         <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Clubs
@@ -82,6 +82,16 @@
         </a></li> -->
         </ul>
     </li>
+    @endcan
+    @can('View Projects')
+    <a class="c-sidebar-nav-link" href="{{ route('college.index') }}">
+        <i class="c-sidebar-nav-icon fas fa-exclamation-triangle"></i>College
+    </a>
+    @endcan 
+    @can('View EducationModel')
+    <a class="c-sidebar-nav-link" href="{{ route('education-model.index') }}">
+        <i class="c-sidebar-nav-icon fas fa-exclamation-triangle"></i>Education Model
+    </a>
     @endcan
    {{-- @can('View Projects')
     <a class="c-sidebar-nav-link" href="{{ route('projects.index') }}">

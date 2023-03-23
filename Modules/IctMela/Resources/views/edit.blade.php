@@ -109,6 +109,7 @@
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
         extraPlugins: 'image2',
+        
 
     };
 </script>

@@ -1,0 +1,13 @@
+{
+    "name": "EducationModel",
+    "alias": "educationmodel",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\EducationModel\\Providers\\EducationModelServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

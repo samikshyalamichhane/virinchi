@@ -44,20 +44,20 @@
                                     <input name="meta_description" class="form-control" value="{{ old('meta_description') }}">
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="description">Page Short Description</label>
                                     <textarea name="description" class="form-control"
                                         required>{{ old('description') }}</textarea>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            <!-- <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="page_full_description">Page Full Description</label>
                                     <textarea name="page_full_description" class="form-control"
                                         required>{{ old('page_full_description') }}</textarea>
                                 </div>
-                            </div>
+                            </div> -->
                             
                         </div>
                         <div class="form-group row">
@@ -108,6 +108,10 @@
     </div>
 </div>
 @endsection
+
+@push('page_scripts')
+<script src="https://cdn.ckeditor.com/4.18.0/standard-all/ckeditor.js"></script>
+
 <script>
     function preview() {
         frame.src=URL.createObjectURL(event.target.files[0]);
@@ -116,3 +120,19 @@
         framePageBanner.src=URL.createObjectURL(event.target.files[0]);
     }
 </script>
+<script>
+    var options = {
+        filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+        filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+        filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+        filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+        extraPlugins: ['image2','colorbutton','basicstyles'],
+    };
+    
+</script>
+<script>
+    CKEDITOR.replace('description', options);
+    CKEDITOR.replace('page_full_description', options);
+</script>
+
+@endpush

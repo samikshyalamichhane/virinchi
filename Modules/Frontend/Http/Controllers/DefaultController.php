@@ -2,18 +2,29 @@
 
 namespace Modules\Frontend\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\Club\Entities\Club;
+use Modules\Frontend\Entities\Application;
+use Modules\Frontend\Entities\Enrollment;
+use Modules\Frontend\Entities\RequestInfo;
 use Modules\Gallery\Entities\ImageGallery;
 use Modules\IctMela\Entities\IctMela;
 use Modules\News\Entities\News;
+use Modules\Page\Entities\Page;
 use Modules\TechNews\Entities\TechNews;
 use Modules\Testimonial\Entities\Testimonial;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Support\Facades\Mail;
+use Modules\College\Entities\College;
+use Modules\EducationModel\Entities\EducationModel;
 
 class DefaultController extends Controller
 {
+    use ValidatesRequests;
+
     public function index(){
         $testimonials = Testimonial::where('publish', 1)->orderBy('created_at', 'DESC')->get();
         $news = TechNews::where('publish',1)->get();
@@ -27,10 +38,15 @@ class DefaultController extends Controller
         return view('frontend::front.mba');
     }
     public function howToApply(){
-        return view('frontend::front.howToApply');
+        $detail = Page::where('slug','how-to-apply')->firstOrFail();
+        return view('frontend::front.howToApply',compact('detail'));
     }
     public function college(){
-        return view('frontend::front.college');
+        $detail = Page::where('slug','college')->firstOrFail();
+        $college = College::first();
+        $details = EducationModel::where('publish',1)->get();
+        return view('frontend::front.college',compact('detail','details','college'));
+        // return view('frontend::front.college',compact('detail'));
     }
     public function ictMela(){
         $details = IctMela::latest()->where('publish',1)->get();
@@ -42,12 +58,15 @@ class DefaultController extends Controller
         return view('frontend::front.clubs',compact('clubs'));
     }
     public function affiliation(){
-        return view('frontend::front.affiliation');
+        $detail = Page::where('slug','affiliation')->firstOrFail();
+        return view('frontend::front.affiliation',compact('detail'));
     }
     public function aboutVirinchi(){
-        return view('frontend::front.aboutVirinchi');
+        $detail = Page::where('slug','about-virinchi')->firstOrFail();
+        return view('frontend::front.aboutVirinchi',compact('detail'));
     }
     public function makeAppointment(){
+        // $detail = Page::where('slug','make-an-appointment')->firstOrFail();
         return view('frontend::front.make-appointment');
     }
     public function saveAppointment(Request $request){
@@ -81,16 +100,19 @@ class DefaultController extends Controller
     }
     
     public function smartByIntellect(){
-        return view('frontend::front.smartByIntellect');
+        $detail = Page::where('slug','smart-by-intellect')->firstOrFail();
+        return view('frontend::front.smartByIntellect',compact('detail'));
     }
     
     public function socialMediaHub(){
-        return view('frontend::front.socialmediahub');
+        $detail = Page::where('slug','social-media-hub')->firstOrFail();
+        return view('frontend::front.socialmediahub',compact('detail'));
     }
     
     
     public function applyNow(){
-        return view('frontend::front.applyNow');
+        $detail = Page::where('slug','how-to-apply')->firstOrFail();
+        return view('frontend::front.applyNow',compact('detail'));
     }
     public function techNews(){
         return view('frontend::front.techNews');
@@ -127,7 +149,7 @@ class DefaultController extends Controller
         'email'=>'required|email',
         'program'=>'required',
         'start_time'=>'required|string',
-        'parent_email'=>'required',
+        'high_school'=>'required',
         'highest_level_of_education'=>'required|string',
         'how_did_you_hear_about_us'=>'required',
         'question'=>'nullable|string']
@@ -141,11 +163,12 @@ class DefaultController extends Controller
             'program' => $request->program,
             'start_time' => $request->start_time,
             'highest_level_of_education' => $request->highest_level_of_education,
-            'from_where_you_heard_about_us' => $request->from_where_you_heard_about_us,
+            'how_did_you_hear_about_us' => $request->how_did_you_hear_about_us,
             'question' => $request->question,
-            
-            
+            'high_school' => $request->high_school,
         ];
+
+        $details = RequestInfo::create($data);
 
         Mail::send('mail.requestInfoEmail', $data, function ($message) use ($data,$request) {
             $message->to('admissions@virinchicollege.edu.np')->from($data['email'],$data['name'])->replyTo($data['email']);
@@ -195,6 +218,8 @@ class DefaultController extends Controller
             'country_address' => $request->country_address,
             
         ];
+
+        $details = Application::create($data);
 
         Mail::send('mail.applicationForm', $data, function ($message) use ($data,$request) {
             $message->to('admissions@virinchicollege.edu.np')->from($data['email'])->replyTo($data['email']);
@@ -251,6 +276,8 @@ class DefaultController extends Controller
             'other_qualification_grade' => $request->other_qualification_grade,
             
         ];
+
+        $details = Enrollment::create($data);
 
         Mail::send('mail.enrollmentFormEmail', $data, function ($message) use ($data,$request) {
             $message->to('admissions@virinchicollege.edu.np')->from($data['email'])->replyTo($data['email']);
