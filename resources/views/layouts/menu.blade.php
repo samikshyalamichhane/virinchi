@@ -118,6 +118,11 @@
         <i class="c-sidebar-nav-icon fas fa-users"></i>Client
     </a>
     @endcan --}}
+    @can('View Page')
+    <a class="c-sidebar-nav-link" href="{{ route('page.index') }}">
+        <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Page
+    </a>
+    @endcan
      <!-- @can('View Page')
     <a class="c-sidebar-nav-link" href="{{ route('page.index') }}">
         <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Page
