@@ -57,7 +57,7 @@
                   <div class="col-md-4 nimg text-center">
                      <!--<a href="#"><img src="assets/img/Club.jpg" alt="some"></a>-->
                      <img src="{{Storage::url($detail->image)}}" alt="some">
-                     <p>{{$detail->image_description}}</p>
+                     <p class="mb-5">{{$detail->image_description}}</p>
                   </div>
                   @endif
                </div>
