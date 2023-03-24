@@ -1,0 +1,13 @@
+{
+    "name": "ExperienceVirinchi",
+    "alias": "experiencevirinchi",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\ExperienceVirinchi\\Providers\\ExperienceVirinchiServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

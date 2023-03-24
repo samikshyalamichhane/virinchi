@@ -65,17 +65,21 @@
                   </div>
                   <div class="col-md-8">
                      <div class="row oppslider">
+                        @foreach($experiences as $experience)
                         <div class="col-md-6">
                            <div class="oppbox">
-                              <img src="{{asset('front/assets/img/Club.jpg')}}" alt="some">
+                              <img src="{{Storage::url($experience->image)}}" alt="some">
                               <div class="box1 vboxes">
-                                 <h5>Club</h5>
-                                 <p>Virinchi offers various other activities along with the academic programs to have proper blend in order to build the competency in graduates, which would foster them to be successful in the chosen profession.</p>
-                                 <a  class="red" href="{{route('clubs')}}" role="button">Learn More <img class="ar" src="http://dev.virinchicollege.edu.np/front/assets/img/arrow-right.svg"></a>
+                                 <h5>{{$experience->title}}</h5>
+                                 {!! $experience->description !!}
+                                 @if($experience->link)
+                                 <a  class="red" href="{{$experience->link}}" role="button">Learn More <img class="ar" src="http://dev.virinchicollege.edu.np/front/assets/img/arrow-right.svg"></a>
+                                 @endif
                               </div>
                            </div>
                         </div>
-                        <div class="col-md-6">
+                        @endforeach
+                        {{--<div class="col-md-6">
                            <div class="oppbox">
                               <img src="{{asset('front/assets/img/ICT Mela pic.jpeg')}}" alt="some">
                               <div class="box2 vboxes">
@@ -110,7 +114,7 @@
                                  <!--<a href="#" class="black" role="button">Learn More <img class="ar" src="{{asset('front/assets/img/arrow-right-white.svg')}}"></a>-->
                               </div>
                            </div>
-                        </div>
+                        </div>--}}
                         
                      </div>
                   </div>

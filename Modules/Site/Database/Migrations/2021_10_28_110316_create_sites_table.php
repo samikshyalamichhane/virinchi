@@ -40,6 +40,8 @@ class CreateSitesTable extends Migration
             $table->text('facebook')->nullable();
             $table->text('youtube')->nullable();
             $table->text('twitter')->nullable();
+            $table->text('tiktok')->nullable();
+            $table->text('instagram')->nullable();
             $table->text('linkedin')->nullable();
             $table->text('address')->nullable();
             $table->text('map')->nullable();
@@ -49,8 +51,21 @@ class CreateSitesTable extends Migration
             $table->text('why_choose_us_title')->nullable();
             $table->longText('about_us_desc')->nullable();
             $table->longText('why_choose_us_desc')->nullable();
-            $table->text('footer_desc')->nullable();
 
+            $table->text('application_fee_desc')->nullable();
+            $table->string('qr_image')->nullable();
+            $table->string('application_fee')->nullable();
+            $table->text('footer_desc')->nullable();
+            
+
+            //contact Information
+            
+            $table->text('contact_info_desc')->nullable();
+            $table->text('direction_desc')->nullable();
+            $table->text('admission_email')->nullable();
+            $table->text('admission_contact')->nullable();
+            $table->text('visit_college_info')->nullable();
+            
             //Banner Image
             $table->string('page_banner_image')->nullable();
             $table->timestamps();
@@ -69,7 +84,7 @@ class CreateSitesTable extends Migration
      */
     public function down()
     {
-        DB::table('permissions')->where('name', 'View SiteInfo')->delete();
+        DB::table('permissions')->where('name', 'Update SiteInfo')->delete();
         Schema::dropIfExists('sites');
     }
 }

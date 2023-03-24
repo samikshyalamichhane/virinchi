@@ -146,14 +146,20 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="twitter">Twitter</label>
-                                <input type="text" name="twitter" class="form-control" value="{{ $site->twitter }}" placeholder="Enter Twitter Link">
+                                <label for="instagram">Instagram</label>
+                                <input type="text" name="instagram" class="form-control" value="{{ $site->instagram }}" placeholder="Enter instagram Link">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="linkedin">LinkedIn</label>
                                 <input type="text" name="linkedin" class="form-control" value="{{ $site->linkedin }}" placeholder="Enter LinkedIn Link">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="tiktok">Tiktok</label>
+                                <input type="text" name="tiktok" class="form-control" value="{{ $site->tiktok }}" placeholder="Enter LinkedIn Link">
                             </div>
                         </div>
                     </div>
@@ -246,7 +252,7 @@
                 </div>
             </div> --}}
 
-            <div>
+            <!-- <div>
                 <input type="checkbox" id="question5" name="q" class="questions">
                 <div class="plus">+</div>
                 <label for="question5" class="question font-weight-bold">
@@ -276,6 +282,74 @@
                             <div class="form-group">
                                 <label for="why_choose_us_desc">Why Choose Us?</label>
                                 <textarea name="why_choose_us_desc" class="form-control">{{ $site->why_choose_us_desc  }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div>
+                <input type="checkbox" id="question6" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question6" class="question font-weight-bold">
+                    CONTACT INFORMATION:
+                </label>
+                <div class="answers">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="admission_email">Admission Email</label>
+                                <input type="text" name="admission_email" class="form-control" value="{{ $site->admission_email }}" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="admission_contact">Admission Contact Number</label>
+                                <input type="text" name="admission_contact" class="form-control" value="{{ $site->admission_contact }}" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="application_fee">Application Fee</label>
+                                <input type="text" name="application_fee" class="form-control" value="{{ $site->application_fee }}" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="visit_college_info">Visit College Description</label>
+                                <textarea name="visit_college_info" class="form-control">{{ $site->visit_college_info  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="contact_info_desc">Contact Information Description</label>
+                                <textarea name="contact_info_desc" class="form-control">{{ $site->contact_info_desc  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="direction_desc">Direction Description</label>
+                                <textarea name="direction_desc" class="form-control">{{ $site->direction_desc  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="application_fee_desc">SUBMIT YOUR APPLICATION FEE</label>
+                                <textarea name="application_fee_desc" class="form-control">{{ $site->application_fee_desc  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">QR Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="qr_image" class="form-control" onchange="qrbannerPreview()">
+                                            <img id="qr_image" src="{{ Storage::url($site->qr_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -348,7 +422,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        {{--<div class="col-sm-4">
                             <label class="col-form-label">Smart By Intellect Banner Image</label>
                             <div class="col-form-label">
                                 <div class="row">
@@ -436,7 +510,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -479,6 +553,10 @@
     function whyChooseUsPreview() {
         why_choose_us_image.src = URL.createObjectURL(event.target.files[0]);
     }
+    
+    function qrbannerPreview() {
+        qr_image.src = URL.createObjectURL(event.target.files[0]);
+    }
 </script>
 <script>
     var options = {
@@ -492,6 +570,9 @@
 </script>
 <script>
     CKEDITOR.replace('description', options);
-    CKEDITOR.replace('resources', options);
+    CKEDITOR.replace('contact_info_desc', options);
+    CKEDITOR.replace('direction_desc', options);
+    CKEDITOR.replace('visit_college_info', options);
+    CKEDITOR.replace('application_fee_desc', options);
 </script>
 @endpush

@@ -109,9 +109,9 @@
                     <div class="col-md-6">
                         <div class="footer__contact fc">
                             <p>
-                                337 Purnachandi Rd, Kumaripati, Lalitpur, Nepal<br />
-                                <i class="fa fa-phone"></i> 977-1-5553396<br />
-                                <i class="fa fa-envelope"></i> info@virinchicollege.edu.np
+                                {{$dashboard_site->address}}<br />
+                                <i class="fa fa-phone"></i> {{$dashboard_site->contact1}}<br />
+                                <i class="fa fa-envelope"></i> {{$dashboard_site->email1}}
                             </p>
                             <ul class="footer__list">
                                 <li><a href="{{route('requestInfo')}}#map">Map & Direction</a></li>
@@ -124,11 +124,11 @@
                                 <!--<li><a href="#">Privacy</a></li>-->
                                 <li><a href="{{route('socialMediaHub')}}">Social Media Hub</a></li>
                                  <!--<div class="socail-media"> -->
-                                <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
-                                <!-- <a href="#"><i class="fa fa-linkedin"></i></a> -->
-                                <li class="instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li class="tiktok"><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                                <li class="facebook"><a href="{{$dashboard_site->facebook}}"><i class="fa fa-facebook"></i></a></li>
+                                <li class="youtube"><a href="{{$dashboard_site->youtube}}"><i class="fa fa-youtube-play"></i></a></li>
+                                <!-- <a href="{{$dashboard_site->linkedin}}"><i class="fa fa-linkedin"></i></a> -->
+                                <li class="instagram"><a href="{{$dashboard_site->instagram}}"><i class="fa fa-instagram"></i></a></li>
+                                <li class="tiktok"><a href="{{$dashboard_site->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
                                  <!--</div> -->
                             </ul>
                         </div>
@@ -137,7 +137,8 @@
                         <!-- <img src="assets/img/favicon.png" alt="" class="img-fluid" /> -->
                         <h5 class="footer-heading-title">VIRINCHI</h5>
                         <p class="footer-about">
-                            Out of 1008 names of Lord Shiva, Virinchi is one which signifies Bramha, the creator of knowledge and wisdom.
+                          {!! $dashboard_site->footer_desc !!}
+                            <!-- Out of 1008 names of Lord Shiva, Virinchi is one which signifies Bramha, the creator of knowledge and wisdom. -->
                         </p>
                     </div>
 
@@ -454,7 +455,7 @@ TOP</a>
         </button>
       </div>
       <div class="modal-body">
-        <img class="" alt="" src="{{asset('front/assets/img/Virinchi College_Qr (1)-page-001 (1).jpg')}}" />
+        <img class="" alt="" src="{{ Storage::url($dashboard_site->qr_image) }}" />
       </div>
       <!--<div class="modal-footer">-->
       <!--  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>-->

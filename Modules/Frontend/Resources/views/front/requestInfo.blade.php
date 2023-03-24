@@ -3,7 +3,7 @@
 <div class="banner noh">
    <div class="container">
       <div class="banner-wrapper">
-         <h2>Request Information</h2>
+         <h2>{{$page->title}}</h2>
       </div>
    </div>
 </div>
@@ -14,7 +14,8 @@
       <div class="container">
          <div class="request-title same-text">
             <p>
-               For more information from Virinchi, including invitations to upcoming admissions and events, please fill out this short form to tell us more about yourself and give us a chance to tell you more about us.
+               {!! $page->description !!}
+               <!-- For more information from Virinchi, including invitations to upcoming admissions and events, please fill out this short form to tell us more about yourself and give us a chance to tell you more about us. -->
             </p>
          </div>
          <div class="applyonline-form">
@@ -142,10 +143,11 @@
                <div class="scope-content appp">
                   <h3 class="course-title">Visit College</h3>
                   <p class="mb-4">
-                     A campus visit is the best way to see yourself at Virinchi. Tour the campus, attend an information session, and meet with an admissions counselor. We want you to experience how Virinchi College opens doors to opportunity.
+                     {!! $dashboard_site->visit_college_info !!}
+                     <!-- A campus visit is the best way to see yourself at Virinchi. Tour the campus, attend an information session, and meet with an admissions counselor. We want you to experience how Virinchi College opens doors to opportunity. -->
                   </p>
-                  <p class="visitor">We welcome visitors</p>
-                  <p>Every <b>SUNDAY</b> to <b>FRIDAY</b>   9:00 am to 4:00 pm </p>
+                  <!-- <p class="visitor">We welcome visitors</p>
+                  <p>Every <b>SUNDAY</b> to <b>FRIDAY</b>   9:00 am to 4:00 pm </p> -->
                   <div class="ap">
                      <a class="btn primary-btn" href="{{route('makeAppointment')}}">Make an Appointment</a></a>
                   </div>
@@ -167,16 +169,14 @@
          <div class="row">
             <div class="col-md-6">
                <h5>CONTACT INFORMATION</h5>
-               <h2>Office of Admissions</h2>
-               <p>We are looking forward to meeting you! Our admissions counselors are here 
-                  to answer your questions and guide you through each step of the admissions process.  You also can reach the admissions office by calling
-               </p>
+               <!-- <h2>Office of Admissions</h2> -->
+               {!! $dashboard_site->contact_info_desc !!}
             </div>
             <div class="col-md-6">
                <div class="bottom-aligner">
                   <ul>
-                     <li><a href="#"><i class="fa fa-envelope"></i>adminssions@virinchicollege.edu.np</a></li>
-                     <li><a href="#"><i class="fa fa-phone"></i>01-5553396, 9863253481</a></li>
+                     <li><a href="#"><i class="fa fa-envelope"></i>{{$dashboard_site->admission_email}}</a></li>
+                     <li><a href="#"><i class="fa fa-phone"></i>{{$dashboard_site->admission_contact}}</a></li>
                   </ul>
                </div>
             </div>
@@ -236,13 +236,11 @@
             <div class="row">
                <div class="col-md-7">
                   <!--<img src="assets/img/google-maps-highlight 1.png" alt="" class="img-fluid"> -->
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.4422402591103!2d85.31628834968876!3d27.672723333537302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19cb05097d61%3A0x66d083a187176a11!2sVirinchi%20College-%20Kumaripati!5e0!3m2!1sen!2snp!4v1673002807073!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <iframe src="{!! $dashboard_site->map !!}" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                </div>
                <div class="col-md-5 dir">
                   <h2>Directions</h2>
-                  <p>Virinchi College is located in Lalitpur city, in the vibrant street of Kumaripati ( in between of Jawalakhel and Lagankhel). 
-                     To reach campus follow road from Jawalakhel roundabout to Lagankhel Satdobato road, and follow the road about 400 mtrs. Then take a left onto Purnachandi Marg/ Taphalho Rd., and follow Purnachandi Marg about 125 mtrs. to the campus.
-                  </p>
+                  {!! $dashboard_site->direction_desc !!}
                </div>
             </div>
          </div>

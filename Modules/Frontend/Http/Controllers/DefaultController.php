@@ -18,8 +18,12 @@ use Modules\TechNews\Entities\TechNews;
 use Modules\Testimonial\Entities\Testimonial;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Mail;
+use Modules\Admission\Entities\Admission;
 use Modules\College\Entities\College;
+use Modules\DocumentCheckList\Entities\DocumentCheckList;
 use Modules\EducationModel\Entities\EducationModel;
+use Modules\ExperienceVirinchi\Entities\ExperienceVirinchi;
+use Modules\Faq\Entities\Faq;
 
 class DefaultController extends Controller
 {
@@ -38,8 +42,11 @@ class DefaultController extends Controller
         return view('frontend::front.mba');
     }
     public function howToApply(){
-        $detail = Page::where('slug','how-to-apply')->firstOrFail();
-        return view('frontend::front.howToApply',compact('detail'));
+        $detail = Page::where('slug','admissions')->firstOrFail();
+        $admissions = Admission::where('publish',1)->latest()->take(2)->get();
+        $faqs = Faq::where('publish',1)->latest()->get();
+        $docs = DocumentCheckList::where('publish',1)->latest()->get();
+        return view('frontend::front.howToApply',compact('detail','admissions','faqs','docs'));
     }
     public function college(){
         $detail = Page::where('slug','college')->firstOrFail();
@@ -101,7 +108,8 @@ class DefaultController extends Controller
     
     public function smartByIntellect(){
         $detail = Page::where('slug','smart-by-intellect')->firstOrFail();
-        return view('frontend::front.smartByIntellect',compact('detail'));
+        $experiences = ExperienceVirinchi::where('publish',1)->latest()->get();
+        return view('frontend::front.smartByIntellect',compact('detail','experiences'));
     }
     
     public function socialMediaHub(){
@@ -141,7 +149,8 @@ class DefaultController extends Controller
         }
     }
     public function requestInfo(){
-        return view('frontend::front.requestInfo');
+        $page = Page::where('slug','request-information')->firstOrFail();
+        return view('frontend::front.requestInfo',compact('page'));
     }
     public function saveRequestInfo(Request $request){
         $this->validate($request,['name'=>'required|string|max:255',

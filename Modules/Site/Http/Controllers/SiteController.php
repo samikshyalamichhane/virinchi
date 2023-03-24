@@ -65,6 +65,11 @@ class SiteController extends Controller
         $site->youtube = $request->youtube;
         $site->twitter = $request->twitter;
         $site->linkedin = $request->linkedin;
+        $site->instagram = $request->instagram;
+
+        $site->application_fee_desc = $request->application_fee_desc;
+        $site->application_fee = $request->application_fee;
+        
         
         $site->address = $request->address;
         $site->about_us_title = $request->about_us_title;
@@ -72,11 +77,24 @@ class SiteController extends Controller
         $site->about_us_desc = $request->about_us_desc;
         $site->why_choose_us_desc = $request->why_choose_us_desc;
 
+        $site->contact_info_desc = $request->contact_info_desc;
+        $site->direction_desc = $request->direction_desc;
+        $site->admission_email = $request->admission_email;
+        $site->admission_contact = $request->admission_contact;
+        $site->visit_college_info = $request->visit_college_info;
+
+
         if ($request->hasFile('header_logo')) {
             $file = $request->header_logo;
             $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
             $path = $file->storeAs('public/site', $filename);
             $site->header_logo = $path;
+        }
+        if ($request->hasFile('qr_image')) {
+            $file = $request->qr_image;
+            $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/site', $filename);
+            $site->qr_image = $path;
         }
         if ($request->hasFile('footer_logo')) {
             $file = $request->footer_logo;

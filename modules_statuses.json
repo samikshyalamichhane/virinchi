@@ -30,5 +30,9 @@
     "TechNews": true,
     "IctMela": true,
     "Club": true,
-    "EducationModel": true
+    "EducationModel": true,
+    "Faq": true,
+    "DocumentCheckList": true,
+    "Admission": true,
+    "ExperienceVirinchi": true
 }

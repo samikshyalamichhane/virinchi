@@ -58,6 +58,10 @@ class CreateBlogsTable extends Migration
      */
     public function down()
     {
+        DB::table('permissions')->where('name', 'View Blog')->delete();
+        DB::table('permissions')->where('name', 'Add Blog')->delete();
+        DB::table('permissions')->where('name', 'Edit Blog')->delete();
+        DB::table('permissions')->where('name', 'Delete Blog')->delete();
         Schema::dropIfExists('blogs');
     }
 }

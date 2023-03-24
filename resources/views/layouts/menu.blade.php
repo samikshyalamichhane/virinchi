@@ -123,6 +123,29 @@
         <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Page
     </a>
     @endcan
+    @can('View Faq')
+    <a class="c-sidebar-nav-link" href="{{ route('faq.index') }}">
+        <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Faq
+    </a>
+    @endcan
+
+    @can('View DocumentCheckList')
+    <a class="c-sidebar-nav-link" href="{{ route('document-check-list.index') }}">
+        <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Document Check List
+    </a>
+    @endcan
+
+    @can('View ExperienceVirinchi')
+    <a class="c-sidebar-nav-link" href="{{ route('experience-virinchi.index') }}">
+        <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Experience Virinchi
+    </a>
+    @endcan
+
+    @can('View Admission')
+    <a class="c-sidebar-nav-link" href="{{ route('admission.index') }}">
+        <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Admission
+    </a>
+    @endcan
      <!-- @can('View Page')
     <a class="c-sidebar-nav-link" href="{{ route('page.index') }}">
         <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Page
