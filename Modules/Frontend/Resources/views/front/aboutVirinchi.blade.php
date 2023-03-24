@@ -15,7 +15,7 @@
    <div class="rs-about style2 md-pt-70 md-pb-70 clubvirinchi abtclub">
       <div class="container">
          <div class="">
-            <div class="sametext ">
+            <div class="sametext naa">
                <div class="sec-title">
                   {!! $detail->description !!}
                </div>
