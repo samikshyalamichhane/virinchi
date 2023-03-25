@@ -404,9 +404,9 @@
             </div>
 
             <div>
-                <input type="checkbox" id="question6" name="q" class="questions">
+                <input type="checkbox" id="question7" name="q" class="questions">
                 <div class="plus">+</div>
-                <label for="question6" class="question font-weight-bold">
+                <label for="question7" class="question font-weight-bold">
                     VISIT PAGE INFORMATION:
                 </label>
                 <div class="answers">
@@ -651,5 +651,7 @@
     CKEDITOR.replace('direction_desc', options);
     CKEDITOR.replace('visit_college_info', options);
     CKEDITOR.replace('application_fee_desc', options);
+    CKEDITOR.replace('off_admission_desc', options);
+    
 </script>
 @endpush
