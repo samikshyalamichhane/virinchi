@@ -407,7 +407,7 @@
                 <input type="checkbox" id="question6" name="q" class="questions">
                 <div class="plus">+</div>
                 <label for="question6" class="question font-weight-bold">
-                    CONTACT INFORMATION:
+                    VISIT PAGE INFORMATION:
                 </label>
                 <div class="answers">
                     <div class="row">
