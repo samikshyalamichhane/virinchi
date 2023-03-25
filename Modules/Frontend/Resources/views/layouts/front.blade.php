@@ -48,9 +48,11 @@
                               <li>
                                  <a href="#">Programs <i class="fa fa-angle-right float-right"></i></a>
                                  <ul class="submenu megamenu">
-                                    <li><a href="{{route('bict')}}">BICT</a>
+                                    @foreach($dashboard_programs as $program)
+                                    <li><a href="{{route('courseDetail',$program->slug)}}">{{$program->short_title}}</a>
                                     </li>
-                                    <li><a href="{{route('mba')}}">MBA</a></li>
+                                    @endforeach
+                                    <!-- <li><a href="{{route('mba')}}">MBA</a></li> -->
                                  </ul>
                               </li>
                               <li><a href="{{route('howToApply')}}">Admission</a></li>
