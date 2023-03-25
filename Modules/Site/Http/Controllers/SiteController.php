@@ -85,6 +85,8 @@ class SiteController extends Controller
         $site->admission_email = $request->admission_email;
         $site->admission_contact = $request->admission_contact;
         $site->visit_college_info = $request->visit_college_info;
+        $site->appointment_desc = $request->appointment_desc;
+        $site->visit_schedule = $request->visit_schedule;
         $site->off_admission_desc = $request->off_admission_desc;
         $site->uni_video_link = $request->uni_video_link;
         

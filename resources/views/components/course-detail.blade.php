@@ -24,6 +24,12 @@
             <textarea name="banner_text" class="form-control">{{ $course->banner_text ?? old('banner_text') }}</textarea>
         </div>
     </div>
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label for="attr_desc">Attribute Description</label>
+            <textarea name="attr_desc" class="form-control">{{ $course->attr_desc ?? old('attr_desc') }}</textarea>
+        </div>
+    </div>
 
     <!-- <div class="form-group col-md-6">
         <label>Select Course Category</label>

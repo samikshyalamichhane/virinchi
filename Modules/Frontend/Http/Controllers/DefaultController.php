@@ -305,6 +305,7 @@ class DefaultController extends Controller
 
     }
     public function visitUs(){
-        return view('frontend::front.visitUs');
+        $detail = Page::where('slug','visit-us')->firstOrFail();
+        return view('frontend::front.visitUs',compact('detail'));
     }
 }

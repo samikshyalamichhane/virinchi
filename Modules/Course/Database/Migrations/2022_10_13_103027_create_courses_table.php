@@ -21,6 +21,7 @@ class CreateCoursesTable extends Migration
             $table->text('short_title')->nullable();
             $table->text('duration')->nullable();
             $table->text('banner_text')->nullable();
+            $table->text('attr_desc')->nullable();
             $table->string('slug')->nullable();
             $table->longText('overview')->nullable();
             $table->longText('scope')->nullable();

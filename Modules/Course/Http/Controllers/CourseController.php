@@ -32,6 +32,7 @@ class CourseController extends Controller
             $project->short_title = $request->short_title;
             $project->duration = $request->duration;
             $project->banner_text = $request->banner_text;
+            $project->attr_desc = $request->attr_desc;
             $project->overview = $request->overview;
             $project->course_category_id = $request->course_category_id;
             $project->publish = $request->publish ? 1 : 0;
@@ -83,6 +84,7 @@ class CourseController extends Controller
             $project->short_title = $request->short_title;
             $project->duration = $request->duration;
             $project->banner_text = $request->banner_text;
+            $project->attr_desc = $request->attr_desc;
             $project->overview = $request->overview;
             $project->course_category_id = $request->course_category_id;
             $project->publish = $request->publish ? 1 : 0;

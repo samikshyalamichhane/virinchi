@@ -67,6 +67,9 @@ class CreateSitesTable extends Migration
             $table->string('qr_image')->nullable();
             $table->string('application_fee')->nullable();
             $table->text('footer_desc')->nullable();
+            $table->text('appointment_desc')->nullable();
+            $table->text('visit_schedule')->nullable();
+            
             
 
             //contact Information

@@ -404,6 +404,32 @@
             </div>
 
             <div>
+                <input type="checkbox" id="question6" name="q" class="questions">
+                <div class="plus">+</div>
+                <label for="question6" class="question font-weight-bold">
+                    CONTACT INFORMATION:
+                </label>
+                <div class="answers">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="visit_schedule">Visit Schedule</label>
+                                <input type="text" name="visit_schedule" class="form-control" value="{{ $site->visit_schedule }}" >
+                            </div>
+                        </div>
+                       
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="appointment_desc">Make an Appointment Description</label>
+                                <textarea name="appointment_desc" class="form-control">{{ $site->appointment_desc  }}</textarea>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div>
                 <input type="checkbox" id="question7" name="q" class="questions">
                 <div class="plus">+</div>
                 <label for="question7" class="question font-weight-bold">
