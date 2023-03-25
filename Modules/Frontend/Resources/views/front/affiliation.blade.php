@@ -24,19 +24,19 @@
          </div>
          <!-- About End -->
          <!-- SEVEN e -->
-         {{--<div class="about-virinchi-features">
+         <div class="about-virinchi-features">
             <div class="container">
                <div class="section-title">
                   <h2><span>SEVEN' e'S</span> of AeU</h2>
                </div>
                <div class="about-feature-img mt-4">
-                  <img src="{{asset('front/assets/img/seven-e.png')}}" alt="" class="img-fluid">
+                  <img src="{{Storage::url($detail->image)}}" alt="" class="img-fluid">
                </div>
                <p class="affiliation-more">
                   To know more about university. <a href="https://aeu.edu.my/discover/the-university" target="_blank">Go to link</a>
                </p>
             </div>
-         </div>--}}
+         </div>
          <!-- SEVEN e End -->
       </main>
 @endsection
