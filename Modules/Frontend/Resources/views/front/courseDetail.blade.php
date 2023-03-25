@@ -94,16 +94,16 @@
             <!-- Overview End -->
             <!-- Hexagonal Attributes -->
             <div class="hexagonal" id="hexagonal">
+            @if($course->courseAttributes->isNotEmpty())
                <div class="container">
                   <div class="hexagonal-content">
                      <h3 class="course-title">
-                        Attributes of <span>Virinchi BICT</span>
+                        Attributes of <span>Virinchi {{$course->short_title}}</span>
                      </h3>
                      <div class="">
                         <div class="">
                            <p>
-                              Here are the six virtues Virinchi BICT offers and gives you that extra edge over the rest. BICT
-                              graduates<br> will create unbelievable solutions to complex human needs.
+                              {!!$course->attr_desc!!}
                            </p>
                         </div>
                      </div>
@@ -238,6 +238,7 @@
                   </div>
                   @endif
                </div>
+               @endif
             </div>
             <!-- Hexagonal Attributes End -->
             <!-- Scope -->
