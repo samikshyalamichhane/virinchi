@@ -5,21 +5,20 @@
   <div class="home-hero__interaction mt-0">
     <div class="home-hero__headline page-heading">
       <span class="home-hero__headline-line home-hero__editor-1">
-        SMART BY <span>INTELLECT</span>
+        {{$dashboard_site->home_title}}</span>
       </span>
     </div>
     <div class="home-hero__subtext" style="opacity: 1">
       <p>
-        Perhaps a Cliche Today, but for us it’s the goal - to make our
-        students smart to create an acomplished life.
+        {!! $dashboard_site->home_short_desc !!}
       </p>
       <div class="primary-btn-wrapper">
         <a href="{{route('smartByIntellect')}}" class="btn primary-btn">Learn Now</a>
       </div>
     </div>
     <div class="home-hero__image">
-      <img alt="" class="home-hero__ui loaded" onload="this.classList.add('loaded')" src="{{asset('front/assets/img/hero.png')}}" />
-      <span class="image-text">Some stones are polished to be diamond so are Virnchians, they shine bright in their career</span>
+      <img alt="" class="home-hero__ui loaded" onload="this.classList.add('loaded')" src="{{ Storage::url($dashboard_site->home_banner_image) }}" />
+      <span class="image-text">{!! $dashboard_site->home_image_desc !!}</span>
     </div>
   </div>
 </div>
@@ -38,7 +37,7 @@
               </div>
               <div class="program__info--description">
                 <p>
-                  Get ready for a better future. We understand that challenging coursework makes education more meaningful. Hence, our programs are academically rigorous and based on skill set as per real- world need.
+                {!! $dashboard_site->home_program_desc !!}
                 </p>
               </div>
             </div>
@@ -47,28 +46,30 @@
 
         <div class="col-md-8 col-12">
           <div class="row">
+            @foreach($courses as $course)
             <div class="col-sm-6">
               <div class="card border-0 program__card">
-                <img src="{{asset('front/assets/img/program-1.png')}}" alt="program" class="card-img img-fluid" />
+                <img src="{{Storage::url($course->image)}}" alt="{{$course->title}}" class="card-img img-fluid" />
                 <div class="card-body nop">
                   <div class="program__card--duration">
-                    <h6>4 Years Program</h6>
+                    <h6>{{$course->duration}}</h6>
                   </div>
                   <div class="program__card--name" data-mh="programTitle">
                     <h3>
-                      Bachelor of Information & Communication Technology
+                      {{$course->title}}
                     </h3>
                   </div>
                   <div class="program__card--action">
                     <div class="primary-btn-wrapper">
-                      <a href="{{route('bict')}}" class="btn primary-btn">Learn More</a>
+                      <a href="{{route('courseDetail',$course->slug)}}" class="btn primary-btn">Learn More</a>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+            @endforeach
 
-            <div class="col-sm-6">
+            <!-- <div class="col-sm-6">
               <div class="card border-0 program__card">
                 <img src="{{asset('front/assets/img/program-2.png')}}" alt="program" class="card-img img-fluid" />
                 <div class="card-body nop">
@@ -85,7 +86,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -491,11 +492,7 @@
                     <h2>The <span>University</span></h2>
                   </div>
                   <p>
-                    We are in partnership with <b>Asia e University (AeU)</b>.
-                  </p>
-                  <p>
-                    <b>Asia e University (AeU)</b> is the COLLABORATIVE MULTINATIONAL UNIVERSITY founded by Asia
-                    Cooperation Dialogue (ACD) with support of 34 Asian Pacific countries.
+                    {!! $dashboard_site->uni_desc !!}
                   </p>
                 </div>
                 <br />
@@ -507,9 +504,9 @@
           </div>
           <div class="col-lg-6 col-md-4">
             <div class="university-wrapper image-margin uniplay">
-              <img src="{{asset('front/assets/img/university.png')}}" alt="" class="img-fluid card-img" />
+              <img src="{{ Storage::url($dashboard_site->uni_image) }}" alt="" class="img-fluid card-img" />
 
-              <a href="https://player.vimeo.com/video/299779943" class="play upp" target="_blank">
+              <a href="{{$dashboard_site->uni_video_link}}" class="play upp" target="_blank">
                 <img src="{{asset('front/assets/img/video-play.png')}}" alt="" class="img-fluid" />
               </a>
             </div>

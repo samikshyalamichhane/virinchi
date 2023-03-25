@@ -51,18 +51,19 @@ class PageController extends Controller
             $page->publish = $request->publish ? 1 : 0;
             if ($request->hasFile('image')) {
                 $file = $request->image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) .  time() . '.' . $file->getClientOriginalExtension();
                 // $path = Storage::put('public/teams', $file, 'public');
                 $path = $file->storeAs('public/page', $filename);
                 $page->image = $path;
             }
             if ($request->hasFile('page_banner')) {
                 $file = $request->page_banner;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 // $path = Storage::put('public/teams', $file, 'public');
                 $path = $file->storeAs('public/page', $filename);
                 $page->page_banner = $path;
             }
+            
             $page->save();
             return redirect()->route('page.index')->with('success', 'Page created successfully');
         } catch (\Exception $e) {
@@ -98,14 +99,14 @@ class PageController extends Controller
             $page->publish = $request->publish ? 1 : 0;
             if ($request->hasFile('image')) {
                 $file = $request->image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 // $path = Storage::put('public/teams', $file, 'public');
                 $path = $file->storeAs('public/page', $filename);
                 $page->image = $path;
             }
             if ($request->hasFile('page_banner')) {
                 $file = $request->page_banner;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 // $path = Storage::put('public/teams', $file, 'public');
                 $path = $file->storeAs('public/page', $filename);
                 $page->page_banner = $path;

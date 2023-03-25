@@ -252,41 +252,82 @@
                 </div>
             </div> --}}
 
-            <!-- <div>
+            <div>
                 <input type="checkbox" id="question5" name="q" class="questions">
                 <div class="plus">+</div>
                 <label for="question5" class="question font-weight-bold">
-                    Home PageINFO:
+                    HOME PAGE INFO:
                 </label>
                 <div class="answers">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="counter">Home Page Title</label>
-                                <input type="text" name="about_us_title" class="form-control" value="{{ $site->about_us_title }}" >
+                                <input type="text" name="home_title" class="form-control" value="{{ $site->home_title }}" >
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="counter">Why Choose Us Title</label>
-                                <input type="text" name="why_choose_us_title" class="form-control" value="{{ $site->why_choose_us_title }}" >
+                                <label for="home_short_desc">Home Page Short Description</label>
+                                <textarea name="home_short_desc" class="form-control">{{ $site->home_short_desc  }}</textarea>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="about_us_desc">About Us</label>
-                                <textarea name="about_us_desc" class="form-control">{{ $site->about_us_desc  }}</textarea>
+                                <label for="home_image_desc">Image Description</label>
+                                <textarea name="home_image_desc" class="form-control">{{ $site->home_image_desc  }}</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-6">
+                            <label class="col-form-label">Home Page Banner Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="home_banner_image" class="form-control" onchange="homebannerPreview()">
+                                            <img id="home_banner_image" src="{{ Storage::url($site->home_banner_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="why_choose_us_desc">Why Choose Us?</label>
-                                <textarea name="why_choose_us_desc" class="form-control">{{ $site->why_choose_us_desc  }}</textarea>
+                                <label for="home_program_desc">Explore Our Program Description</label>
+                                <textarea name="home_program_desc" class="form-control">{{ $site->home_program_desc  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="uni_desc">The University Description</label>
+                                <textarea name="uni_desc" class="form-control">{{ $site->uni_desc  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="counter">The Uni Video Link</label>
+                                <input type="text" name="uni_video_link" class="form-control" value="{{ $site->uni_video_link }}" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-form-label">The University Image</label>
+                            <div class="col-form-label">
+                                <div class="row">
+                                    <div class="col-12 colxs-12">
+                                        <div class="form-check checkbox">
+                                            <input type="file" name="uni_image" class="form-control" onchange="homebannerPreview()">
+                                            <img id="uni_image" src="{{ Storage::url($site->uni_image) }}" width="100px" height="100px" />
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <div>
                 <input type="checkbox" id="question6" name="q" class="questions">
@@ -324,6 +365,12 @@
                             <div class="form-group">
                                 <label for="contact_info_desc">Contact Information Description</label>
                                 <textarea name="contact_info_desc" class="form-control">{{ $site->contact_info_desc  }}</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="off_admission_desc">Office of Admission Description</label>
+                                <textarea name="off_admission_desc" class="form-control">{{ $site->off_admission_desc  }}</textarea>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -557,6 +604,10 @@
     function qrbannerPreview() {
         qr_image.src = URL.createObjectURL(event.target.files[0]);
     }
+    function homebannerPreview() {
+        home_banner_image.src = URL.createObjectURL(event.target.files[0]);
+    }
+    
 </script>
 <script>
     var options = {

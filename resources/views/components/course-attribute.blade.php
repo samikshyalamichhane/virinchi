@@ -34,7 +34,7 @@
                         <tr>
                             <th>S.N</th>
                             <th>Title</th>
-                            <th>Description</th>
+                            <!-- <th>Description</th> -->
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -43,7 +43,7 @@
                         <tr>
                             <td>{{ $key+1 }}</td>
                             <td>{{ $courses->title }}</td>
-                            <td>{!! $courses->attribute_description !!}</td>
+                            <!-- <td>{!! $courses->attribute_description !!}</td> -->
                             <td>
                                 <a href="{{ route('courseattributes.edit',['id'=>$course->id,'course_attribute_id'=>$courses->id])}}#component-1-2" class="btn btn-xs btn-primary">Edit </a>
                                 <button data-question="Are you sure to delete the data?" data-toggle="confirm" data-id="{{ $courses->id }}" class="btn btn-xs btn-danger">Delete</button>

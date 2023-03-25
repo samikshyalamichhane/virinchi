@@ -52,6 +52,17 @@ class CreateSitesTable extends Migration
             $table->longText('about_us_desc')->nullable();
             $table->longText('why_choose_us_desc')->nullable();
 
+            //home
+            $table->text('home_title')->nullable();
+            $table->text('home_short_desc')->nullable();
+            $table->text('home_image_desc')->nullable();
+            $table->text('home_program_desc')->nullable();
+            $table->text('uni_desc')->nullable();
+            $table->string('home_banner_image')->nullable();
+            $table->string('uni_video_link')->nullable();
+            $table->string('uni_image')->nullable();
+            
+
             $table->text('application_fee_desc')->nullable();
             $table->string('qr_image')->nullable();
             $table->string('application_fee')->nullable();
@@ -65,6 +76,8 @@ class CreateSitesTable extends Migration
             $table->text('admission_email')->nullable();
             $table->text('admission_contact')->nullable();
             $table->text('visit_college_info')->nullable();
+            $table->text('off_admission_desc')->nullable();
+            
             
             //Banner Image
             $table->string('page_banner_image')->nullable();

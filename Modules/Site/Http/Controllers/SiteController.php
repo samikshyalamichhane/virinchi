@@ -72,16 +72,22 @@ class SiteController extends Controller
         
         
         $site->address = $request->address;
-        $site->about_us_title = $request->about_us_title;
-        $site->why_choose_us_title = $request->why_choose_us_title;
-        $site->about_us_desc = $request->about_us_desc;
-        $site->why_choose_us_desc = $request->why_choose_us_desc;
+        $site->home_title = $request->home_title;
+        $site->home_short_desc = $request->home_short_desc;
+        $site->home_image_desc = $request->home_image_desc;
+        $site->home_program_desc = $request->home_program_desc;
+        $site->uni_desc = $request->uni_desc;
+        
+        
 
         $site->contact_info_desc = $request->contact_info_desc;
         $site->direction_desc = $request->direction_desc;
         $site->admission_email = $request->admission_email;
         $site->admission_contact = $request->admission_contact;
         $site->visit_college_info = $request->visit_college_info;
+        $site->off_admission_desc = $request->off_admission_desc;
+        $site->uni_video_link = $request->uni_video_link;
+        
 
 
         if ($request->hasFile('header_logo')) {
@@ -89,6 +95,19 @@ class SiteController extends Controller
             $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
             $path = $file->storeAs('public/site', $filename);
             $site->header_logo = $path;
+        }
+        
+        if ($request->hasFile('home_banner_image')) {
+            $file = $request->home_banner_image;
+            $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/site', $filename);
+            $site->home_banner_image = $path;
+        }
+        if ($request->hasFile('uni_image')) {
+            $file = $request->uni_image;
+            $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/site', $filename);
+            $site->uni_image = $path;
         }
         if ($request->hasFile('qr_image')) {
             $file = $request->qr_image;

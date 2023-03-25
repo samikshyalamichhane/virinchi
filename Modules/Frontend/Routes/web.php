@@ -30,6 +30,7 @@
     Route::post('save-enrollment-form','DefaultController@saveEnrollmentForm')->name('saveEnrollmentForm');
     Route::post('save-appointment','DefaultController@saveAppointment')->name('saveAppointment');
     Route::get('make-an-appointment','DefaultController@makeAppointment')->name('makeAppointment');
+    Route::get('program/{slug}','DefaultController@courseDetail')->name('courseDetail');
     Route::get('tech-news','DefaultController@techNews')->name('techNews');
     Route::get('tech-news/{slug}','DefaultController@techNewsDetail')->name('techNewsDetail');
     Route::get('events-list','DefaultController@events')->name('eventsListing');

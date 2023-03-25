@@ -54,6 +54,9 @@
         <i class="c-sidebar-nav-icon cib-microsoft"></i>Events
     </a>
     @endcan
+    <a class="c-sidebar-nav-link" href="{{ route('courses.index') }}">
+        <i class="c-sidebar-nav-icon fas fa-id-card-alt"></i>Programs
+    </a>
     @can('View Technews')
     <a class="c-sidebar-nav-link" href="{{ route('technews.index') }}">
         <i class="c-sidebar-nav-icon cib-microsoft"></i>Tech News

@@ -136,7 +136,7 @@
                                                         <tr>
                                                             <th>S.N</th>
                                                             <th>Title</th>
-                                                            <th>Description</th>
+                                                            <!-- <th>Description</th> -->
                                                             <th>Action</th>
                                                         </tr>
                                                     </thead>
@@ -145,7 +145,7 @@
                                                         <tr>
                                                             <td>{{ $key+1 }}</td>
                                                             <td>{{ $courses->title }}</td>
-                                                            <td>{!! @$courses->attribute_description !!}</td>
+                                                            <!-- <td>{!! @$courses->attribute_description !!}</td> -->
 
                                                             <td>
                                                                 <!-- <button class="btn btn-xs btn-info" onclick="window.location=`{{ route('coursemodules.edit',['id'=>$courses->id]) }}`">Edit</button> -->

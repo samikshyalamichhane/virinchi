@@ -20,6 +20,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Mail;
 use Modules\Admission\Entities\Admission;
 use Modules\College\Entities\College;
+use Modules\Course\Entities\Course;
 use Modules\DocumentCheckList\Entities\DocumentCheckList;
 use Modules\EducationModel\Entities\EducationModel;
 use Modules\ExperienceVirinchi\Entities\ExperienceVirinchi;
@@ -33,7 +34,8 @@ class DefaultController extends Controller
         $testimonials = Testimonial::where('publish', 1)->orderBy('created_at', 'DESC')->get();
         $news = TechNews::where('publish',1)->get();
         $events = News::where('publish',1)->get();
-        return view('frontend::front.index',compact('testimonials','news','events'));
+        $courses = Course::where('publish',1)->get();
+        return view('frontend::front.index',compact('testimonials','news','events','courses'));
     }
     public function bict(){
         return view('frontend::front.bict');
@@ -41,6 +43,12 @@ class DefaultController extends Controller
     public function mba(){
         return view('frontend::front.mba');
     }
+
+    public function courseDetail($slug){
+        $course = Course::with('courseGalleries','courseModules','courseAttributes')->where('slug',$slug)->first();
+        return view('frontend::front.courseDetail',compact('course'));
+    }
+
     public function howToApply(){
         $detail = Page::where('slug','admissions')->firstOrFail();
         $admissions = Admission::where('publish',1)->latest()->take(2)->get();

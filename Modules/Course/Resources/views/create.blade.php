@@ -18,7 +18,7 @@
                 @csrf
                 <div class="card">
                     <div class="card-header"><i class="fa fa-align-justify"></i> Add course</div>
-                    
+
                     <div class="card-body">
                         <div class="row">
                             <div class="col-sm-6">
@@ -27,15 +27,26 @@
                                     <input name="title" class="form-control" value="{{ old('title') }}" required>
                                 </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label>Select Course Catgeory</label>
-                                <select name="course_category_id" class="form-control">
-                                    <option value="">-- select one --</option>
-                                    @foreach($courseCategories as $cat)
-                                        <option value="{{$cat->id}}">{{$cat->title}}</option>
-                                    @endforeach
-                                </select>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="short_title">Short Title</label>
+                                    <input name="short_title" class="form-control" value="{{ old('short_title') }}" required>
+                                </div>
                             </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="duration">Duration Of Course</label>
+                                    <input name="duration" class="form-control" value="{{ old('duration') }}" required>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="banner_text">Banner Text</label>
+                                    <textarea name="banner_text" class="form-control">{{ old('banner_text') }}</textarea>
+                                </div>
+                            </div>
+
+
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="overview">Overview</label>
@@ -57,14 +68,23 @@
                                     <textarea name="eligibility" class="form-control" id="eligibility" required>{{ old('eligibility') }}</textarea>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="publish">Image</label>
                                     <input type="file" name="image" class="form-control" onchange="preview()">
-                                            <img id="frame" src="" width="100px" height="100px" />
+                                    <img id="frame" src="" width="100px" height="100px" />
+
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="publish">Banner Image</label>
+                                    <input type="file" name="banner_image" class="form-control" onchange="bannerImagepreview()">
+                                    <img id="frame" src="" width="100px" height="100px" />
 
                                 </div>
                             </div>
@@ -73,7 +93,7 @@
                                 <div class="form-group">
                                     <label for="publish">Scope Image</label>
                                     <input type="file" name="scope_image" class="form-control" onchange="scopeImagePreview()">
-                                            <img id="frame1" src="" width="100px" height="100px" />
+                                    <img id="frame1" src="" width="100px" height="100px" />
 
                                 </div>
                             </div>
@@ -104,10 +124,10 @@
     function preview() {
         frame.src = URL.createObjectURL(event.target.files[0]);
     }
+
     function scopeImagePreview() {
         frame1.src = URL.createObjectURL(event.target.files[0]);
     }
-    
 </script>
 <script>
     var options = {
@@ -116,7 +136,7 @@
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
         extraPlugins: 'image2',
-        
+
     };
 </script>
 <script>

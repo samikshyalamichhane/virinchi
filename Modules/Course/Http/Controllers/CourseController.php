@@ -29,20 +29,29 @@ class CourseController extends Controller
         try {
             $project = new Course();
             $project->title = $request->title;
+            $project->short_title = $request->short_title;
+            $project->duration = $request->duration;
+            $project->banner_text = $request->banner_text;
             $project->overview = $request->overview;
             $project->course_category_id = $request->course_category_id;
             $project->publish = $request->publish ? 1 : 0;
-            $project->scope = $request->scope;
+            $project->scope = $request;
             $project->eligibility = $request->eligibility;
             if ($request->hasFile('image')) {
                 $file = $request->image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 $path = $file->storeAs('public/course', $filename);
                 $project->image = $path;
             }
+            if ($request->hasFile('banner_image')) {
+                $file = $request->banner_image;
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
+                $path = $file->storeAs('public/course', $filename);
+                $project->banner_image = $path;
+            }
             if ($request->hasFile('scope_image')) {
                 $file = $request->scope_image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 $path = $file->storeAs('public/course', $filename);
                 $project->scope_image = $path;
             }
@@ -71,6 +80,9 @@ class CourseController extends Controller
         $project =  Course::findOrFail($id);
         try {
             $project->title = $request->title;
+            $project->short_title = $request->short_title;
+            $project->duration = $request->duration;
+            $project->banner_text = $request->banner_text;
             $project->overview = $request->overview;
             $project->course_category_id = $request->course_category_id;
             $project->publish = $request->publish ? 1 : 0;
@@ -78,13 +90,19 @@ class CourseController extends Controller
             $project->eligibility = $request->eligibility;
             if ($request->hasFile('image')) {
                 $file = $request->image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 $path = $file->storeAs('public/project', $filename);
                 $project->image = $path;
             }
+            if ($request->hasFile('banner_image')) {
+                $file = $request->banner_image;
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
+                $path = $file->storeAs('public/project', $filename);
+                $project->banner_image = $path;
+            }
             if ($request->hasFile('scope_image')) {
                 $file = $request->scope_image;
-                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $filename = rand(10, 100) . time() . '.' . $file->getClientOriginalExtension();
                 $path = $file->storeAs('public/project', $filename);
                 $project->scope_image = $path;
             }

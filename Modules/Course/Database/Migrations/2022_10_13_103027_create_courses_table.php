@@ -18,6 +18,9 @@ class CreateCoursesTable extends Migration
             $table->unsignedBigInteger('course_category_id')->nullable();
             $table->foreign('course_category_id')->references('id')->on('course_categories')->onDelete('CASCADE');
             $table->text('title')->nullable();
+            $table->text('short_title')->nullable();
+            $table->text('duration')->nullable();
+            $table->text('banner_text')->nullable();
             $table->string('slug')->nullable();
             $table->longText('overview')->nullable();
             $table->longText('scope')->nullable();
@@ -27,6 +30,7 @@ class CreateCoursesTable extends Migration
             $table->boolean('publish')->default(true);
             $table->string('image')->nullable();
             $table->string('scope_image')->nullable();
+            $table->string('banner_image')->nullable();
 
             $table->timestamps();
         });
