@@ -1,5 +1,0 @@
-<html>
-
-{!! $content !!}
-
-</html>

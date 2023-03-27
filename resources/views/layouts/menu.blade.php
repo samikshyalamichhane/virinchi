@@ -144,11 +144,38 @@
     </a>
     @endcan
 
+    
+
+    @can('View Testimonial')
+    <li class="c-sidebar-nav-dropdown">
+
+        <a class="c-sidebar-nav-dropdown-toggle" href="{{ route('testimonial.index') }}">
+            <i class="c-sidebar-nav-icon cib-microsoft"></i>Enrollment
+        </a>
+        <ul class="c-sidebar-nav-dropdown-items">
+            <!-- <li><a class="c-sidebar-nav-link" href="{{ route('enrollment.index') }}"> -->
+            <!-- Enrollment List
+        </a></li>
+        <li><a class="c-sidebar-nav-link" href="{{ route('appointmentLists') }}">
+            Appointment List
+        </a></li>
+        <li><a class="c-sidebar-nav-link" href="{{ route('applicationLists') }}">
+            Application List
+        </a></li>
+        </li> -->
+        <li><a class="c-sidebar-nav-link" href="{{ route('requestInfoLists') }}">
+            Request Info lists
+        </a></li>
+        </ul>
+    </li>
+    @endcan
     @can('View Admission')
     <a class="c-sidebar-nav-link" href="{{ route('admission.index') }}">
         <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Admission
     </a>
     @endcan
+    
+
      <!-- @can('View Page')
     <a class="c-sidebar-nav-link" href="{{ route('page.index') }}">
         <i class="c-sidebar-nav-icon fab fa-pagelines"></i>Page

@@ -119,9 +119,9 @@
                                 <li><a href="{{route('requestInfo')}}#map">Map & Direction</a></li>
                                 <!--<li><a href="{{route('visitUs')}}">Visit</a></li>-->
                                 <li><a href="#">Request Info</a></li>
-                                <li><a href="http://dev.virinchicollege.edu.np/request-info#scope">Visit</a></li>
+                                <li><a href="{{route('requestInfo')}}#scope">Visit</a></li>
                                 <!--<li><a href="{{route('howToApply')}}">Admission</a></li>-->
-                                <li><a href="http://dev.virinchicollege.edu.np/request-info#newcontact">Contact</a></li><br>
+                                <li><a href="{{route('requestInfo')}}#newcontact">Contact</a></li><br>
                                 <!--<li><a href="#">Accreditation</a></li>-->
                                 <!--<li><a href="#">Privacy</a></li>-->
                                 <li><a href="{{route('socialMediaHub')}}">Social Media Hub</a></li>
