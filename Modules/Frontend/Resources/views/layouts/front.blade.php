@@ -41,8 +41,8 @@
                <div class="main-menu d-none d-lg-block">
                   <nav>
                      <ul id="navigation">
-                        <li class="active"><a href="{{route('home')}}">Home</a></li>
-                        <li>
+                        <li class="{{ Route::is('home')   ? 'active' : '' }}"><a href="{{route('home')}}">Home</a></li>
+                        <li class="{{ Route::is('howToApply') || Route::is('courseDetail')  ? 'active' : '' }}">
                            <a href="#">Study <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                            <ul class="submenu">
                               <li>
@@ -58,7 +58,7 @@
                               <li><a href="{{route('howToApply')}}">Admission</a></li>
                            </ul>
                         </li>
-                        <li>
+                        <li class="{{ Route::is('ictMela') || Route::is('clubs') || Route::is('college')  ? 'active' : '' }}">
                            <!--<a href="#">College <i class="fa fa-chevron-down"></i></a>-->
                            <a href="#">College <i class="fa fa-angle-down"></i></a>
                            <ul class="submenu">
@@ -68,8 +68,8 @@
                               <!-- <li><a href="teach-to-learn.php">Teach to Learn</a></li> -->
                            </ul>
                         </li>
-                        <li><a href="{{route('affiliation')}}">Affiliation</a></li>
-                        <li>
+                        <li class="{{ Route::is('affiliation')  ? 'active' : '' }}"><a href="{{route('affiliation')}}">Affiliation</a></li>
+                        <li class="{{ Route::is('aboutVIrinchi') || Route::is('smartByIntellect')  ? 'active' : '' }}">
                            <a href="#">About <i class="fa fa-angle-down"></i></a>
                            <ul class="submenu">
                               <li><a href="{{route('aboutVIrinchi')}}">About Virinchi</a></li>
@@ -118,7 +118,7 @@
                             <ul class="footer__list">
                                 <li><a href="{{route('requestInfo')}}#map">Map & Direction</a></li>
                                 <!--<li><a href="{{route('visitUs')}}">Visit</a></li>-->
-                                <li><a href="#">Request Info</a></li>
+                                <li><a href="{{route('requestInfo')}}">Request Info</a></li>
                                 <li><a href="{{route('requestInfo')}}#scope">Visit</a></li>
                                 <!--<li><a href="{{route('howToApply')}}">Admission</a></li>-->
                                 <li><a href="{{route('requestInfo')}}#newcontact">Contact</a></li><br>
@@ -156,7 +156,7 @@
                             
                              <li><a href="#">Events</a></li>
                               <li><a href="#">News</a></li>
-                              <li><a href="#">FAQs</a></li>
+                              <li><a href="{{route('howToApply')}}#faqsection">FAQs</a></li>
                             <!--<li><a href="#">Downloads</a></li>-->
                             <!--<li><a href="#">Faculty</a></li>-->
                             <!--<li><a href="#">Alumni</a></li>-->

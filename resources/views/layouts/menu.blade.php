@@ -153,8 +153,8 @@
             <i class="c-sidebar-nav-icon cib-microsoft"></i>Enrollment
         </a>
         <ul class="c-sidebar-nav-dropdown-items">
-            <!-- <li><a class="c-sidebar-nav-link" href="{{ route('enrollment.index') }}"> -->
-            <!-- Enrollment List
+            <li><a class="c-sidebar-nav-link" href="{{ route('enrollment.index') }}">
+            Enrollment List
         </a></li>
         <li><a class="c-sidebar-nav-link" href="{{ route('appointmentLists') }}">
             Appointment List
@@ -162,7 +162,7 @@
         <li><a class="c-sidebar-nav-link" href="{{ route('applicationLists') }}">
             Application List
         </a></li>
-        </li> -->
+        </li>
         <li><a class="c-sidebar-nav-link" href="{{ route('requestInfoLists') }}">
             Request Info lists
         </a></li>

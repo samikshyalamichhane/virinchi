@@ -192,23 +192,24 @@
                      <div class="contact_header">
                         <div class="contact_types">
                            <span class="contact_heading_label">OFFICE OF ADMISSIONS</span>
-                           <h2 class="contact_name" itemprop="name">
+                           {!! $dashboard_site->off_admission_desc !!}
+                           <!-- <h2 class="contact_name" itemprop="name">
                               <span class="contact_name_label">Meet the admission COUNSELOR</span>
                            </h2>
                            <p class="contact_info">
                               We are looking forward to meeting you! Our admissions counselors are here to answer your questions
                               and guide you through each step of the admissions process. You also can reach the Admissions Office by
                               calling
-                           </p>
+                           </p> -->
                         </div>
                         <div class="contact_types_header">
-                           <a class="contact_type contact_type_link contact_type_email" href="mailto:admissions@muhlenberg.edu">
+                           <a class="contact_type contact_type_link contact_type_email" href="mailto:{{$dashboard_site->admission_email}}">
                            <span class="contact_type_label">
                            <span class="contact_type_label_icon">
                            <i class="fa fa-envelope"></i>
                            </span>
                            </span>
-                           <span class="contact_type_description" itemprop="email">admissions@virinchicollege.edu.np</span>
+                           <span class="contact_type_description" itemprop="email">{{$dashboard_site->admission_email}}</span>
                            </a>
                            <a class="contact_type contact_type_link contact_type_phone" href="tel:484-664-3200">
                            <span class="contact_type_label">
@@ -216,12 +217,12 @@
                            <i class="fa fa-phone"></i>
                            </span>
                            </span>
-                           <span class="contact_type_description" itemprop="telephone">01-5553396, 9863253481</span>
+                           <span class="contact_type_description" itemprop="telephone">{{$dashboard_site->admission_contact}}</span>
                            </a>
                         </div>
                      </div>
                      <div class="contact_body">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14133.769573369373!2d85.3184824!3d27.6727186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x66d083a187176a11!2sVirinchi%20College-%20Kumaripati!5e0!3m2!1sen!2snp!4v1665763828414!5m2!1sen!2snp" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="{{$dashboard_site->map}}" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                      </div>
                   </div>
                </div>

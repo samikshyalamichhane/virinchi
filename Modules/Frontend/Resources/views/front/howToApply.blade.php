@@ -102,7 +102,7 @@
                                  </ul>--}}
                               </div>
                            </div>
-                           <div class="faq accordion">
+                           <div class="faq accordion expanded" id="faqsection" >
                               <div class="question-wrapper" id="newfaq">
                                  <div class="d-flex align-items-center">
                                     <p class="question faz" title="">
@@ -277,7 +277,7 @@
 
                                     <!--</div>-->
                                     <div id="accordion" class="accordion">
-                                       <div class="card mb-0">
+                                       <div class="card mb-0" >
                                           @foreach($faqs as $key=>$faq)
                                           <div class="card-header collapsed" data-toggle="collapse" href="#collapse{{$faq->slug}}">
                                              <a class="card-title">

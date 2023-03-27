@@ -43,7 +43,7 @@
                                         class="badge badge-pill badge-warning">Inactive</span>' !!}</td> --> --}}
                                 <td>
                                     <a href=""  class="btn btn-success btn-sm view" data-id="{{$contactus->id}}"><i class="fa fa-eye"></i></a>
-                                    <!-- <button data-question="Are you sure to delete the data?" data-toggle="confirm" data-id="{{ $contactus->id }}" class="btn btn-xs btn-danger">Delete</button> -->
+                                    <button data-question="Are you sure to delete the data?" data-toggle="confirm" data-id="{{ $contactus->id }}" class="btn btn-sm btn-danger">Delete</button>
                                 </td>
                             </tr>
                             @empty
@@ -60,23 +60,22 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          {{-- <h4 class="modal-title">Details</h4> --}}
-        </div>
-        <div class="modal-body">
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Request Info Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
       </div>
-
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
 </div>
 @endsection
 @push('page_scripts')
@@ -117,7 +116,7 @@
         $('[data-toggle="confirm"]').jConfirm().on('confirm', function(e){
             var btn = $(this),
             id = btn.data('id');
-            var url = '{{ route("contactus.delete", ":id") }}';
+            var url = '{{ route("requestInfo.delete", ":id") }}';
             url = url.replace(':id', id);
             window.location=url
         });
@@ -136,7 +135,7 @@
                 $('[data-toggle="confirm"]').jConfirm().on('confirm', function(e){
                 var btn = $(this),
                 id = btn.data('id');
-                var url = '{{ route("contactus.delete", ":id") }}';
+                var url = '{{ route("requestInfo.delete", ":id") }}';
                 url = url.replace(':id', id);
                 window.location=url
                 });
@@ -146,7 +145,6 @@
 
 </script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script>
     $.ajaxSetup({
         headers: {
@@ -166,8 +164,8 @@
                 success:function(data){
                     console.log("Hello world");
                     console.log(data);
-                    $('#myModal .modal-body').html(data);
-                    $('#myModal').modal('show');
+                    $('#exampleModal .modal-body').html(data);
+                    $('#exampleModal').modal('show');
                 }
             });
         });

@@ -1,6 +1,6 @@
 <table class="table table-bordered">
     <thead>
-      <p>Message from {{$detail->name}}</p>
+      <p>Request from {{$detail->name}}</p>
     </thead>
     <tbody>
       <tr class="success">

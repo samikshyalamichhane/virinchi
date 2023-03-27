@@ -215,23 +215,24 @@
                            <div class="contact_header">
                               <div class="contact_types">
                                  <span class="contact_heading_label">OFFICE OF ADMISSIONS</span>
-                                 <h2 class="contact_name" itemprop="name">
+                                 {!! $dashboard_site->off_admission_desc !!}
+                                 <!-- <h2 class="contact_name" itemprop="name">
                                     <span class="contact_name_label">Meet the admission COUNSELOR</span>
                                  </h2>
                                  <p class="contact_info">
                                     We are looking forward to meeting you! Our admissions counselors are here to answer your questions
                                     and guide you through each step of the admissions process. You also can reach the Admissions Office by
                                     calling
-                                 </p>
+                                 </p> -->
                               </div>
                               <div class="contact_types_header">
-                                 <a class="contact_type contact_type_link contact_type_email" href="mailto:admissions@muhlenberg.edu">
+                                 <a class="contact_type contact_type_link contact_type_email" href="mailto:{{$dashboard_site->admission_email}}">
                                  <span class="contact_type_label">
                                  <span class="contact_type_label_icon">
                                  <i class="fa fa-envelope"></i>
                                  </span>
                                  </span>
-                                 <span class="contact_type_description" itemprop="email">admissions@virinchicollege.edu.np</span>
+                                 <span class="contact_type_description" itemprop="email">{{$dashboard_site->admission_email}}</span>
                                  </a>
                                  <a class="contact_type contact_type_link contact_type_phone" href="tel:484-664-3200">
                                  <span class="contact_type_label">
@@ -239,7 +240,7 @@
                                  <i class="fa fa-phone"></i>
                                  </span>
                                  </span>
-                                 <span class="contact_type_description" itemprop="telephone">01-5553396, 9863253481</span>
+                                 <span class="contact_type_description" itemprop="telephone">{{$dashboard_site->admission_contact}}</span>
                                  </a>
                               </div>
                            </div>

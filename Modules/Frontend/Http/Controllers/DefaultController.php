@@ -25,6 +25,7 @@ use Modules\DocumentCheckList\Entities\DocumentCheckList;
 use Modules\EducationModel\Entities\EducationModel;
 use Modules\ExperienceVirinchi\Entities\ExperienceVirinchi;
 use Modules\Faq\Entities\Faq;
+use Modules\Frontend\Entities\Appointment;
 
 class DefaultController extends Controller
 {
@@ -104,6 +105,8 @@ class DefaultController extends Controller
             'time'=>$request->time,
 
         ];
+        $details = Appointment::create($data);
+
         Mail::send('mail.appointment', $data, function ($message) use ($data,$request) {
             $message->to('admissions@virinchicollege.edu.np')->from($data['email'],$data['name'])->replyTo($data['email']);
                 $message->subject('Appointment');   
@@ -127,8 +130,8 @@ class DefaultController extends Controller
     
     
     public function applyNow(){
-        $detail = Page::where('slug','how-to-apply')->firstOrFail();
-        return view('frontend::front.applyNow',compact('detail'));
+        // $detail = Page::where('slug','how-to-apply')->firstOrFail();
+        return view('frontend::front.applyNow');
     }
     public function techNews(){
         return view('frontend::front.techNews');
@@ -197,7 +200,6 @@ class DefaultController extends Controller
     }
     public function saveApplicationForm(Request $request){
         $this->validate($request,['first_name'=>'required|string|max:255','last_name'=>'required|string|max:255',
-        'middle_name'=>'string|max:255',
         'gender'=>'required|string|max:20',
         'dob'=>'required',
         'address'=>'required|string',

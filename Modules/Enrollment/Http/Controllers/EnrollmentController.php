@@ -15,18 +15,18 @@ class EnrollmentController extends Controller
     public function index()
     {
         $enrollments = Enrollment::get();
-        return view('enrollment::index',compact('enrollments'));
+        return view('enrollment::enrollmentList',compact('enrollments'));
     }
 
     public function applicationLists()
     {
         $applications = Application::get();
-        return view('enrollment::index',compact('applications'));
+        return view('enrollment::applicationList',compact('applications'));
     }
     public function appointmentLists()
     {
-        $enrollments = Appointment::get();
-        return view('enrollment::index',compact('enrollments'));
+        $appointments = Appointment::get();
+        return view('enrollment::appointmentList',compact('appointments'));
     }
     public function requestInfoLists()
     {
@@ -36,22 +36,46 @@ class EnrollmentController extends Controller
 
     public function viewEnrollment(Request $request){
         $detail = Enrollment::findOrFail($request->id);
-        return view('enrollment::index', compact('detail'));
+        return view('enrollment::enrollmentPreview', compact('detail'));
     }
 
     public function viewApplication(Request $request){
         $detail = Application::findOrFail($request->id);
-        return view('enrollment::index', compact('detail'));
+        return view('enrollment::applicationPreview', compact('detail'));
     }
 
     public function viewAppointment(Request $request){
         $detail = Appointment::findOrFail($request->id);
-        return view('enrollment::index', compact('detail'));
+        return view('enrollment::appointmentPreview', compact('detail'));
     }
 
     public function viewRequestInfo(Request $request){
         $detail = RequestInfo::findOrFail($request->id);
         return view('enrollment::requestInfoPreview', compact('detail'));
+    }
+
+    public function deleteRequestInfo(Request $request){
+        $detail = RequestInfo::findOrFail($request->id);
+        $detail->delete();
+        return redirect()->back()->with('success', 'Deleted successfully');
+    }
+
+    public function deleteApplication(Request $request){
+        $detail = Application::findOrFail($request->id);
+        $detail->delete();
+        return redirect()->back()->with('success', 'Deleted successfully');
+    }
+
+    public function deleteAppointment(Request $request){
+        $detail = Appointment::findOrFail($request->id);
+        $detail->delete();
+        return redirect()->back()->with('success', 'Deleted successfully');
+    }
+
+    public function deleteEnrollment(Request $request){
+        $detail = Enrollment::findOrFail($request->id);
+        $detail->delete();
+        return redirect()->back()->with('success', 'Deleted successfully');
     }
 
 
