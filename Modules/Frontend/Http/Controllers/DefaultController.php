@@ -65,13 +65,15 @@ class DefaultController extends Controller
         // return view('frontend::front.college',compact('detail'));
     }
     public function ictMela(){
+        $detail = Page::where('slug','ict-mela')->firstOrFail();
         $details = IctMela::latest()->where('publish',1)->get();
         $gallery = ImageGallery::with('imagess')->where('slug','ict-mela')->first();
-        return view('frontend::front.ictMela',compact('details','gallery'));
+        return view('frontend::front.ictMela',compact('details','gallery','detail'));
     }
     public function clubs(){
+        $detail = Page::where('slug','clubs')->firstOrFail();
         $clubs = Club::published()->get();
-        return view('frontend::front.clubs',compact('clubs'));
+        return view('frontend::front.clubs',compact('clubs','detail'));
     }
     public function affiliation(){
         $detail = Page::where('slug','affiliation')->firstOrFail();

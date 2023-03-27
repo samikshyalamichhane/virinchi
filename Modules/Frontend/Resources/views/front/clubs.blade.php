@@ -4,7 +4,7 @@
 <div class="banner club newclub">
    <div class="container">
       <div class="banner-wrapper">
-         <h2>Clubs</h2>
+         <h2>{{$detail->title}}</h2>
       </div>
    </div>
 </div>
@@ -16,9 +16,11 @@
          <div class="">
             <div class="sametext ">
                <div class="sec-title">
-                  <h2><span>Virinchi</span> offers various activities along with the academic programs to have proper blend in order to build the competency in graduates, which would foster them to be successful in the chosen profession.</h2>
+                  {!! $detail->description !!}
+                  {{--<h2><span>Virinchi</span> offers various activities along with the academic programs to have proper blend in order to build the competency in graduates, which would foster them to be successful in the chosen profession.</h2>
                   <!--<p>Clubs has been formed in the college to give students an opportunity to develop leadership, boost their skill and competency by organizing and carrying out college activities and service projects. In addition to planning events that contribute to college spirit and community welfare. They also help share student ideas, interests and concerns with the college community.</p>-->
                   <p>Clubs has been formed in the college to give students an opportunity to develop leadership, boost their skill and competency by organizing and carrying out college activities and service projects. In addition to planning events that contribute to college spirit and community welfare. They also help share student ideas, interests and concerns with the college community.</p>
+                     --}}
                </div>
             </div>
          </div>

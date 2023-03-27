@@ -5,7 +5,7 @@
       <div class="banner club">
          <div class="container">
             <div class="banner-wrapper">
-               <h2>ICT Mela</h2>
+               <h2>{{$detail->title}}</h2>
             </div>
          </div>
       </div>
@@ -17,9 +17,10 @@
                <div class="">
                   <div class="sametext ">
                      <div class="sec-title">
+                     {!! $detail->description !!}
                         <!--<h2><span>ICT Mela</span> (‘Mela’ is the nepali word meaning ‘FAIR’ ) is <br> an annual fest of Virinchi college to showcase the <br> talents of virinchians, by creating various Information<br> & Communication Technology (ICT) projects. </h2>-->
-                        <h2><span>ICT Mela</span> is an annual fest of Virinchi college to showcase the talents of BICT students, by creating various Information & Communication Technology (ICT) projects.</h2>
-                        <p> Virinchians are Creators. The Mela exhibits ICT solutions created by Bachelor of ICT (BICT) software engineering students for various day to day household and corporate problems. BICT students are indulged in making various software applications to IoT and robotics projects throughout the year. The bests are showcased in the meal. Its main aim is to expose the best of Virinchians to promote possibilities and opportunities in ICT in Nepal. It also provides a great opportunity for the younger generation who wants to make a career in the ICT sector. </p>
+                        <!-- <h2><span>ICT Mela</span> is an annual fest of Virinchi college to showcase the talents of BICT students, by creating various Information & Communication Technology (ICT) projects.</h2>
+                        <p> Virinchians are Creators. The Mela exhibits ICT solutions created by Bachelor of ICT (BICT) software engineering students for various day to day household and corporate problems. BICT students are indulged in making various software applications to IoT and robotics projects throughout the year. The bests are showcased in the meal. Its main aim is to expose the best of Virinchians to promote possibilities and opportunities in ICT in Nepal. It also provides a great opportunity for the younger generation who wants to make a career in the ICT sector. </p> -->
                      </div>
                   </div>
                </div>
