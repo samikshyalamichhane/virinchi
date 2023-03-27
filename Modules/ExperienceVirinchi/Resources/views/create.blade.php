@@ -29,7 +29,7 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="link">Link</label>
-                                    <input name="link" class="form-control" value="{{ old('link') }}" required>
+                                    <input name="link" class="form-control" value="{{ old('link') }}" >
                                 </div>
                             </div>
                             <!-- <div class="col-sm-12">
