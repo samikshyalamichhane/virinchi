@@ -29,92 +29,92 @@
                   </p> -->
                </div>
                <!-- FAQ Modules -->
-               <div class="faq-apply" id="faq-apply">
-                  <div>
-                     <div class="text-control-1">
-                        <div class="faqs-section">
-                           <div class="faq accordion">
-                              <div class="question-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <p class="question" title="">Apply Online</p>
-                                 </div>
-                                 <i class="material-icons drop">expand_more</i>
-                              </div>
-                              <div class="answer-wrapper">
-                                 <p class="answer newanswer">
-                                    Fill out the application form to apply in your interested programs.
-                                 <div class="button-wrapper nbw" style="padding-bottom:40px; display:block;">
-                                    <a class="btn primary-btn" href="{{route('enrollmentForm')}}">Enrollment Form</a>
-                                 </div>
-                                 </p>
-                              </div>
-                           </div>
-                           <div class="faq accordion">
-                              <div class="question-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <p class="question" title="">Submit your application fee</p>
-                                 </div>
-                                 <i class="material-icons drop">expand_more</i>
-                              </div>
-                              <div class="answer-wrapper">
-                                 <div class="col-md-12 faqlist pt-4 qrpopup answer">
+               <!--<div class="faq-apply" id="faq-apply">-->
+               <!--   <div>-->
+               <!--      <div class="text-control-1">-->
+               <!--         <div class="faqs-section">-->
+               <!--            <div class="faq accordion">-->
+               <!--               <div class="question-wrapper">-->
+               <!--                  <div class="d-flex align-items-center">-->
+               <!--                     <p class="question" title="">Apply Online</p>-->
+               <!--                  </div>-->
+               <!--                  <i class="material-icons drop">expand_more</i>-->
+               <!--               </div>-->
+               <!--               <div class="answer-wrapper">-->
+               <!--                  <p class="answer newanswer">-->
+               <!--                     Fill out the application form to apply in your interested programs.-->
+               <!--                  <div class="button-wrapper nbw" style="padding-bottom:40px; display:block;">-->
+               <!--                     <a class="btn primary-btn" href="{{route('enrollmentForm')}}">Enrollment Form</a>-->
+               <!--                  </div>-->
+               <!--                  </p>-->
+               <!--               </div>-->
+               <!--            </div>-->
+               <!--            <div class="faq accordion">-->
+               <!--               <div class="question-wrapper">-->
+               <!--                  <div class="d-flex align-items-center">-->
+               <!--                     <p class="question" title="">Submit your application fee</p>-->
+               <!--                  </div>-->
+               <!--                  <i class="material-icons drop">expand_more</i>-->
+               <!--               </div>-->
+               <!--               <div class="answer-wrapper">-->
+               <!--                  <div class="col-md-12 faqlist pt-4 qrpopup answer">-->
                                     <!--<h6>Be ready to pay the application fee</h6>-->
-                                    <p>All applicants are required to submit an application fee to process the application form. The online application fee is NPR. {{$dashboard_site->application_fee}} and can be paid via e-sewa QR code (<button type="button" class="btn btn-primary click" data-toggle="modal" data-target="#exampleModal">
-                                          click here
-                                       </button>).The fee is non-refundable.</p>
-                                    {!! $dashboard_site->application_fee_desc !!}
+               <!--                     <p>All applicants are required to submit an application fee to process the application form. The online application fee is NPR. {{$dashboard_site->application_fee}} and can be paid via e-sewa QR code (<button type="button" class="btn btn-primary click" data-toggle="modal" data-target="#exampleModal">-->
+               <!--                           click here-->
+               <!--                        </button>).The fee is non-refundable.</p>-->
+               <!--                     {!! $dashboard_site->application_fee_desc !!}-->
                                     <!--<img class="" alt="" src="{{asset('front/assets/img/Virinchi College_Qr (1)-page-001 (1).jpg')}}" />-->
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="faq accordion">
-                              <div class="question-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <p class="question" title="">
-                                       Document checklist
-                                    </p>
-                                 </div>
-                                 <i class="material-icons drop">expand_more</i>
-                              </div>
-                              <div class="answer-wrapper">
-                                 @foreach($docs as $doc)
-                                 <ul class="answer-list">
-                                    <div class="row mb-2 mt-3">
-                                       <h6>{{$doc->title}}</h6>
-                                    </div>
-                                    {!! $doc->description !!}
-                                    <hr>
-                                 </ul>
-                                 @endforeach
+               <!--                  </div>-->
+               <!--               </div>-->
+               <!--            </div>-->
+               <!--            <div class="faq accordion">-->
+               <!--               <div class="question-wrapper">-->
+               <!--                  <div class="d-flex align-items-center">-->
+               <!--                     <p class="question" title="">-->
+               <!--                        Document checklist-->
+               <!--                     </p>-->
+               <!--                  </div>-->
+               <!--                  <i class="material-icons drop">expand_more</i>-->
+               <!--               </div>-->
+               <!--               <div class="answer-wrapper">-->
+               <!--                  @foreach($docs as $doc)-->
+               <!--                  <ul class="answer-list">-->
+               <!--                     <div class="row mb-2 mt-3">-->
+               <!--                        <h6>{{$doc->title}}</h6>-->
+               <!--                     </div>-->
+               <!--                     {!! $doc->description !!}-->
+               <!--                     <hr>-->
+               <!--                  </ul>-->
+               <!--                  @endforeach-->
 
-                                 {{--<ul class="answer-list">
-                                    <div class="row mb-2 mt-2">
-                                       <h6>Document Checklist For BICT</h6>
-                                    </div>
-                                    <li>SEE/Grade 10 Marksheet, Character and Certificate</li>
-                                    <li>Grade 12 /NEB/any equivalent degree Transcript, Character, Provisional and Migration </li>
-                                    <li>English Proficiency Letter/ IELTS/ TOEFL</li>
-                                    <li>Curricular vitae</li>
-                                    <li>Citizenship (In English) or Passport</li>
-                                    <li>Passport Size Photo 4 nos</li>
+               <!--                  {{--<ul class="answer-list">-->
+               <!--                     <div class="row mb-2 mt-2">-->
+               <!--                        <h6>Document Checklist For BICT</h6>-->
+               <!--                     </div>-->
+               <!--                     <li>SEE/Grade 10 Marksheet, Character and Certificate</li>-->
+               <!--                     <li>Grade 12 /NEB/any equivalent degree Transcript, Character, Provisional and Migration </li>-->
+               <!--                     <li>English Proficiency Letter/ IELTS/ TOEFL</li>-->
+               <!--                     <li>Curricular vitae</li>-->
+               <!--                     <li>Citizenship (In English) or Passport</li>-->
+               <!--                     <li>Passport Size Photo 4 nos</li>-->
                                     <!--<li>Job Recommendation*</li>-->
-                                    <li><b>Note: All documents must be notarized</b></li>
-                                 </ul>--}}
-                              </div>
-                           </div>
-                           <div class="faq accordion expanded" id="faqsection" >
-                              <div class="question-wrapper" id="newfaq">
-                                 <div class="d-flex align-items-center">
-                                    <p class="question faz" title="">
-                                       FAQs
-                                    </p>
-                                 </div>
-                                 <i class="material-icons drop">expand_more</i>
-                              </div>
+               <!--                     <li><b>Note: All documents must be notarized</b></li>-->
+               <!--                  </ul>--}}-->
+               <!--               </div>-->
+               <!--            </div>-->
+               <!--            <div class="faq accordion expanded" id="faqsection" >-->
+               <!--               <div class="question-wrapper" id="newfaq">-->
+               <!--                  <div class="d-flex align-items-center">-->
+               <!--                     <p class="question faz" title="">-->
+               <!--                        FAQs-->
+               <!--                     </p>-->
+               <!--                  </div>-->
+               <!--                  <i class="material-icons drop">expand_more</i>-->
+               <!--               </div>-->
 
-                              <div class="answer-wrapper">
-                                 <p class="answer">
-                                 <div class="col-md-12 faqlist">
+               <!--               <div class="answer-wrapper">-->
+               <!--                  <p class="answer">-->
+               <!--                  <div class="col-md-12 faqlist">-->
                                     <!--                                           <div id="accordion">-->
                                     <!--  <div class="card">-->
                                     <!--    <div class="card-header" id="headingOne">-->
@@ -276,125 +276,125 @@
                                     <!--  </div>-->
 
                                     <!--</div>-->
-                                    <div id="accordion" class="accordion">
-                                       <div class="card mb-0" >
-                                          @foreach($faqs as $key=>$faq)
-                                          <div class="card-header collapsed " data-toggle="collapse" href="#collapse{{$faq->slug}}">
-                                             <a class="card-title">
-                                                Q. {{$faq->question}}
-                                             </a>
-                                          </div>
-                                          <div id="collapse{{$faq->slug}}" class="card-body collapse" data-parent="#accordion">
-                                             {!! $faq->answers !!}
-                                          </div>
-                                          @endforeach
-                                          {{--<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
-                                             <a class="card-title">
-                                                Q. Does the college provide hostel and transportation facilities?
-                                             </a>
-                                          </div>
-                                          <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
-                                             Yes, we provide hostel facilities. But the transportation facilities are not provided.
-                                          </div>
-                                          <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
-                                             <a class="card-title">
-                                                Q. Which University?
-                                             </a>
-                                          </div>
-                                          <div id="collapseThree" class="collapse" data-parent="#accordion">
-                                             <div class="card-body">
-                                                We are affiliated to Asia e University (AeU), COLLABORATIVE MULTINATIONAL UNIVERSITY, is globally recognized University, established under Asia Cooperation Dialogue (ACD) with support of 34 Asian countries.
-                                             </div>
-                                          </div>
-                                          <div class="card-header collapsed" data-toggle="collapse" href="#z">
-                                             <a class="card-title">
-                                                Q. What is the fee structure?
-                                             </a>
-                                          </div>
-                                          <div id="z" class="card-body collapse" data-parent="#accordion">
+               <!--                     <div id="accordion" class="accordion">-->
+               <!--                        <div class="card mb-0" >-->
+               <!--                           @foreach($faqs as $key=>$faq)-->
+               <!--                           <div class="card-header collapsed " data-toggle="collapse" href="#collapse{{$faq->slug}}">-->
+               <!--                              <a class="card-title">-->
+               <!--                                 Q. {{$faq->question}}-->
+               <!--                              </a>-->
+               <!--                           </div>-->
+               <!--                           <div id="collapse{{$faq->slug}}" class="card-body collapse" data-parent="#accordion">-->
+               <!--                              {!! $faq->answers !!}-->
+               <!--                           </div>-->
+               <!--                           @endforeach-->
+               <!--                           {{--<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">-->
+               <!--                              <a class="card-title">-->
+               <!--                                 Q. Does the college provide hostel and transportation facilities?-->
+               <!--                              </a>-->
+               <!--                           </div>-->
+               <!--                           <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">-->
+               <!--                              Yes, we provide hostel facilities. But the transportation facilities are not provided.-->
+               <!--                           </div>-->
+               <!--                           <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">-->
+               <!--                              <a class="card-title">-->
+               <!--                                 Q. Which University?-->
+               <!--                              </a>-->
+               <!--                           </div>-->
+               <!--                           <div id="collapseThree" class="collapse" data-parent="#accordion">-->
+               <!--                              <div class="card-body">-->
+               <!--                                 We are affiliated to Asia e University (AeU), COLLABORATIVE MULTINATIONAL UNIVERSITY, is globally recognized University, established under Asia Cooperation Dialogue (ACD) with support of 34 Asian countries.-->
+               <!--                              </div>-->
+               <!--                           </div>-->
+               <!--                           <div class="card-header collapsed" data-toggle="collapse" href="#z">-->
+               <!--                              <a class="card-title">-->
+               <!--                                 Q. What is the fee structure?-->
+               <!--                              </a>-->
+               <!--                           </div>-->
+               <!--                           <div id="z" class="card-body collapse" data-parent="#accordion">-->
 
-                                             Please contact the admission officer for fee details.
+               <!--                              Please contact the admission officer for fee details.-->
 
-                                          </div>
-                                          <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#y">
-                                             <a class="card-title">
-                                                Q. Is equivalent to TU and MOE registered?
-                                             </a>
-                                          </div>
-                                          <div id="y" class="card-body collapse" data-parent="#accordion">
-                                             Yes, we are equivalent to TU and registered from Ministry of Education (MOE) Nepal.
-
-
-                                          </div>
-                                          <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#r">
-                                             <a class="card-title">
-                                                Q. What about the class timing for MBA?
-                                             </a>
-                                          </div>
-                                          <div id="r" class="collapse" data-parent="#accordion">
-                                             <div class="card-body">
-                                                We are running both the morning and the evening classes. Morning classes starts from 6:30 am to 8:30 am whereas evening classes starts from 5:45 pm to 7:45 pm
-
-                                             </div>
-                                          </div>--}}
-                                       </div>
-                                       {{--<div class="card-header collapsed" data-toggle="collapse" href="#cc">
-                                          <a class="card-title">
-                                             Q. Want to know more about BICT?
-                                          </a>
-                                       </div>
-                                       <div id="cc" class="card-body collapse" data-parent="#accordion">
-
-                                          Bachelor of Information & Communication Technology (BICT) with specialization in SOFTWARE ENGINEERING is globally high demanded professional program of new generation offering huge range of job opportunities with high paying remuneration after graduation. It is 4 years Hons. degree program that develops students' core skills to create innovative solutions for the digital world in every working sector.
-
-                                       </div>
-                                       <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#oo">
-                                          <a class="card-title">
-                                             Q. Are there any scholarships?
-                                          </a>
-                                       </div>
-                                       <div id="oo" class="card-body collapse" data-parent="#accordion">
-                                          Yes, we are providing different types of scholarships. To know more contact the office of admission.
+               <!--                           </div>-->
+               <!--                           <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#y">-->
+               <!--                              <a class="card-title">-->
+               <!--                                 Q. Is equivalent to TU and MOE registered?-->
+               <!--                              </a>-->
+               <!--                           </div>-->
+               <!--                           <div id="y" class="card-body collapse" data-parent="#accordion">-->
+               <!--                              Yes, we are equivalent to TU and registered from Ministry of Education (MOE) Nepal.-->
 
 
-                                       </div>
-                                       <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee">
-                                          <a class="card-title">
-                                             Q. When is Virinchi College established?
-                                          </a>
-                                       </div>
-                                       <div id="eee" class="collapse" data-parent="#accordion">
-                                          <div class="card-body">
-                                             Virinchi college is established in 2013.
+               <!--                           </div>-->
+               <!--                           <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#r">-->
+               <!--                              <a class="card-title">-->
+               <!--                                 Q. What about the class timing for MBA?-->
+               <!--                              </a>-->
+               <!--                           </div>-->
+               <!--                           <div id="r" class="collapse" data-parent="#accordion">-->
+               <!--                              <div class="card-body">-->
+               <!--                                 We are running both the morning and the evening classes. Morning classes starts from 6:30 am to 8:30 am whereas evening classes starts from 5:45 pm to 7:45 pm-->
 
-                                          </div>
-                                       </div>
-                                       <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#ooo">
-                                          <a class="card-title">
-                                             Q. What program are offered at Virinchi college?
-                                          </a>
-                                       </div>
-                                       <div id="ooo" class="card-body collapse" data-parent="#accordion">
-                                          We offer BICT (Bachelors of Information and Communication Technology) specialization in Software Engineering and MBA (Master in Business Administration) in Entrepreneurship.
+               <!--                              </div>-->
+               <!--                           </div>--}}-->
+               <!--                        </div>-->
+               <!--                        {{--<div class="card-header collapsed" data-toggle="collapse" href="#cc">-->
+               <!--                           <a class="card-title">-->
+               <!--                              Q. Want to know more about BICT?-->
+               <!--                           </a>-->
+               <!--                        </div>-->
+               <!--                        <div id="cc" class="card-body collapse" data-parent="#accordion">-->
+
+               <!--                           Bachelor of Information & Communication Technology (BICT) with specialization in SOFTWARE ENGINEERING is globally high demanded professional program of new generation offering huge range of job opportunities with high paying remuneration after graduation. It is 4 years Hons. degree program that develops students' core skills to create innovative solutions for the digital world in every working sector.-->
+
+               <!--                        </div>-->
+               <!--                        <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#oo">-->
+               <!--                           <a class="card-title">-->
+               <!--                              Q. Are there any scholarships?-->
+               <!--                           </a>-->
+               <!--                        </div>-->
+               <!--                        <div id="oo" class="card-body collapse" data-parent="#accordion">-->
+               <!--                           Yes, we are providing different types of scholarships. To know more contact the office of admission.-->
 
 
-                                       </div>
-                                       <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#p">
-                                          <a class="card-title">
-                                             Q. Does Virinchi provides Internships and job placements?
-                                          </a>
-                                       </div>
-                                       <div id="p" class="collapse" data-parent="#accordion">
-                                          <div class="card-body">
-                                             Yes, we assist our students for internship and job placement within our recruitment partner organizations.
+               <!--                        </div>-->
+               <!--                        <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee">-->
+               <!--                           <a class="card-title">-->
+               <!--                              Q. When is Virinchi College established?-->
+               <!--                           </a>-->
+               <!--                        </div>-->
+               <!--                        <div id="eee" class="collapse" data-parent="#accordion">-->
+               <!--                           <div class="card-body">-->
+               <!--                              Virinchi college is established in 2013.-->
 
-                                          </div>
-                                       </div>--}}
+               <!--                           </div>-->
+               <!--                        </div>-->
+               <!--                        <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#ooo">-->
+               <!--                           <a class="card-title">-->
+               <!--                              Q. What program are offered at Virinchi college?-->
+               <!--                           </a>-->
+               <!--                        </div>-->
+               <!--                        <div id="ooo" class="card-body collapse" data-parent="#accordion">-->
+               <!--                           We offer BICT (Bachelors of Information and Communication Technology) specialization in Software Engineering and MBA (Master in Business Administration) in Entrepreneurship.-->
 
-                                    </div>
+
+               <!--                        </div>-->
+               <!--                        <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#p">-->
+               <!--                           <a class="card-title">-->
+               <!--                              Q. Does Virinchi provides Internships and job placements?-->
+               <!--                           </a>-->
+               <!--                        </div>-->
+               <!--                        <div id="p" class="collapse" data-parent="#accordion">-->
+               <!--                           <div class="card-body">-->
+               <!--                              Yes, we assist our students for internship and job placement within our recruitment partner organizations.-->
+
+               <!--                           </div>-->
+               <!--                        </div>--}}-->
+
+               <!--                     </div>-->
                                     <!--<h6>Q. What is the procedure of admission? </h6>-->
                                     <!--After visiting the college you need to take an admission form and appear the ability test. After that an interview is taken, then you need to get admission by submitting all the required documents and admission amount.-->
-                                 </div>
+               <!--                  </div>-->
                                  <!--<div class="col-md-12 faqlist">-->
                                  <!--   <h6>Q. What documents must be submitted to properly file an application? </h6>-->
                                  <!--   <p>The required documents for BICT are:</p>-->
@@ -455,13 +455,131 @@
                                  <!--   <h6>Q. Does Virinchi provides Internships and job placements?</h6>-->
                                  <!--   Yes, we assist our students for internship and job placement within our recruitment partner organizations.-->
                                  <!--</div>-->
-                                 </p>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+               <!--                  </p>-->
+               <!--               </div>-->
+               <!--            </div>-->
+               <!--         </div>-->
+               <!--      </div>-->
+               <!--   </div>-->
+               <!--</div>-->
+               <div id="accordion" class="accordion acd htaa">
+        <div class="card mb-0">
+            <div class="card-header" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                <a class="card-title">
+                    Q. What is the procedure of admission? 
+                </a>
+            </div>
+            <div id="collapseOne" class="card-body collapse show" data-parent="#accordion" style="">
+                
+                    After visiting the college you need to take an admission form and appear the ability test. After that an interview is taken, then you need to get admission by submitting all the required documents and admission amount.
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false">
+                <a class="card-title">
+                  Q. Does the college provide hostel and transportation facilities?
+                </a>
+            </div>
+            <div id="collapseTwo" class="card-body collapse" data-parent="#accordion" style="">
+                        Yes, we provide hostel facilities. But the transportation facilities are not provided.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false">
+                <a class="card-title">
+                  Q. Which University?
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion" style="">
+                <div class="card-body">
+                    We are affiliated to Asia e University (AeU), COLLABORATIVE MULTINATIONAL UNIVERSITY, is globally recognized University, established under Asia Cooperation Dialogue (ACD) with support of 34 Asian countries.
+                </div>
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" href="#z">
+                <a class="card-title">
+                Q. What is the fee structure?
+                </a>
+            </div>
+            <div id="z" class="card-body collapse" data-parent="#accordion">
+                
+                    Please contact the admission officer for fee details.
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#y" aria-expanded="false">
+                <a class="card-title">
+                  Q. Is equivalent to TU and MOE registered?
+                </a>
+            </div>
+            <div id="y" class="card-body collapse" data-parent="#accordion">
+                                Yes, we are equivalent to TU and registered from Ministry of Education (MOE) Nepal.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#r" aria-expanded="false">
+                <a class="card-title">
+                  Q. What about the class timing for MBA?
+                </a>
+            </div>
+            <div id="r" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                We are running both the morning and the evening classes. Morning classes starts from 6:30 am to 8:30 am whereas evening classes starts from 5:45 pm to 7:45 pm
+      
+                </div>
+            </div>
+        </div>
+        <div class="card-header collapsed" data-toggle="collapse" href="#cc">
+                <a class="card-title">
+                    Q. Want to know more about BICT?
+                </a>
+            </div>
+            <div id="cc" class="card-body collapse" data-parent="#accordion">
+                
+                Bachelor of Information &amp; Communication Technology (BICT) with specialization in SOFTWARE ENGINEERING is globally high demanded professional program of new generation offering huge range of job opportunities with high paying remuneration after graduation. It is 4 years Hons. degree program that develops students' core skills to create innovative solutions for the digital world in every working sector.    
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#oo" aria-expanded="false">
+                <a class="card-title">
+                  Q. Are there any scholarships?
+                </a>
+            </div>
+            <div id="oo" class="card-body collapse" data-parent="#accordion">
+                        Yes, we are providing different types of scholarships. To know more contact the office of admission.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee" aria-expanded="false">
+                <a class="card-title">
+                  Q. When is Virinchi College established?
+                </a>
+            </div>
+            <div id="eee" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                            Virinchi college is established in 2013.
+
+                </div>
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#ooo" aria-expanded="false">
+                <a class="card-title">
+                  Q. What program are offered at Virinchi college?
+                </a>
+            </div>
+            <div id="ooo" class="card-body collapse" data-parent="#accordion">
+                        We offer BICT (Bachelors of Information and Communication Technology) specialization in Software Engineering and MBA (Master in Business Administration) in Entrepreneurship.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#p" aria-expanded="false">
+                <a class="card-title">
+                  Q. Does Virinchi provides Internships and job placements?
+                </a>
+            </div>
+            <div id="p" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                            Yes, we assist our students for internship and job placement within our recruitment partner organizations.
+
+                </div>
+            </div>
+            
+    </div>
                <!-- FAQ End -->
             </div>
             <div class="col-md-3">

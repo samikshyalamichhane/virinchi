@@ -6898,6 +6898,15 @@ background: #CF171F;
 .acd{
     box-shadow:none;
 }
+.acd ul li{
+    list-style:disc;
+    margin-bottom:10px;
+}
+.htaa{
+    width: 86%;
+    margin-top: 50px;
+    margin-bottom:20px;
+}
     
 
 
