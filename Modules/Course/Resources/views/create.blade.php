@@ -150,5 +150,6 @@
     CKEDITOR.replace('scope', options);
     CKEDITOR.replace('eligibility', options);
     CKEDITOR.replace('outcome', options);
+    CKEDITOR.replace('banner_text', options);
 </script>
 @endpush

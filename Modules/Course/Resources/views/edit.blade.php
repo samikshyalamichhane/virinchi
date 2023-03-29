@@ -427,6 +427,7 @@
     CKEDITOR.replace('eligibility', options);
     CKEDITOR.replace('description', options);
     CKEDITOR.replace('attribute_description', options);
+    CKEDITOR.replace('banner_text', options);
 </script>
 <script>
   var triggerEl = document.querySelector('#component-1-2')
