@@ -80,7 +80,7 @@
         filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
         filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
         filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
-        extraPlugins: 'image2',
+        extraPlugins: ['image2','colorbutton','basicstyles'],
         
     };
 </script>
