@@ -313,9 +313,14 @@
             <h2>
               <a href="{{route('techNews')}}">Tech News from <span>Virinchians</span></a>
             </h2>
-            <a href="tech-news-listing.php"></a>
+            <a href="{{route('techNews')}}"></a>
           </div>
+          <div class="pull-right">
+              <a href="{{route('techNews')}}">Learn More
+                <img src="{{asset('front/assets/img/arrow-right-lg.svg')}}" alt="" class="img-fluid event-img" /></a>
+            </div>
         </div>
+        
 
         <div class="row newvideos">
           <div class="col-md-10 col-12">
