@@ -269,104 +269,222 @@
                   <div class="row">
                      <div class="col-lg-9 col-md-10">
                         <h3 class="course-title">Course <span>Modules</span></h3>
-                        <div>
-                           <div class="text-control-1">
-                              <div class="faqs-section">
-                                 @foreach($course->courseModules as $module)
-                                 <div class="faq accordion">
-                                    <div class="question-wrapper">
-                                       <div class="d-flex align-items-center">
-                                          <p class="question" title="">{{$module->title}}</p>
-                                       </div>
-                                       <i class="material-icons drop">expand_more</i>
-                                    </div>
-                                    <div class="answer-wrapper">
-                                       <ul class="answer-list">
-                                       {!! $module->description !!}
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 @endforeach
-                                 {{--<div class="faq accordion">
-                                    <div class="question-wrapper">
-                                       <div class="d-flex align-items-center">
-                                          <p class="question" title="">Elective Subjects</p>
-                                       </div>
-                                       <i class="material-icons drop">expand_more</i>
-                                    </div>
-                                    <div class="answer-wrapper">
-                                       <ul class="answer-list">
-                                          <li>Advanced Java Programming</li>
-                                          <li>Communication Skills</li>
-                                          <li>Computer Forensic</li>
-                                          <li>Critical Thinking and Problem Solving Skills</li>
-                                          <li>Fundamental of English Grammar</li>
-                                          <li>Internet Security</li>
-                                          <li>Web Economy</li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="faq accordion">
-                                    <div class="question-wrapper">
-                                       <div class="d-flex align-items-center">
-                                          <p class="question" title="">
-                                             Specialization subjects on software engineering
-                                          </p>
-                                       </div>
-                                       <i class="material-icons drop">expand_more</i>
-                                    </div>
-                                    <div class="answer-wrapper">
-                                       <ul class="answer-list">
-                                          <li>Agile Software Development</li>
-                                          <li>Requirements Engineering</li>
-                                          <li>Software Constructions</li>
-                                          <li>Software Quality Assurance</li>
-                                          <li>Software Integration &amp; Improvement</li>
-                                          <li>Software Architecture &amp; Design</li>
-                                          <li>Software Engineering for Real Time-System</li>
-                                          <li>Software Testing</li>
-                                          <li>Software Engineering</li>
-                                          <li>Usability Engineering</li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="faq accordion">
-                                    <div class="question-wrapper">
-                                       <div class="d-flex align-items-center">
-                                          <p class="question" title="">
-                                             University compulsory subjects
-                                          </p>
-                                       </div>
-                                       <i class="material-icons drop">expand_more</i>
-                                    </div>
-                                    <div class="answer-wrapper">
-                                       <ul class="answer-list">
-                                          <li>Entrepreneurship in Asia</li>
-                                          <li>Information Literacy and Research Skills</li>
-                                          <li>Internet &amp; WWW</li>
-                                       </ul>
-                                    </div>
-                                 </div>
-                                 <div class="faq accordion">
-                                    <div class="question-wrapper">
-                                       <div class="d-flex align-items-center">
-                                          <p class="question" title="">
-                                             MQA Compulsory Subjects
-                                          </p>
-                                       </div>
-                                       <i class="material-icons drop">expand_more</i>
-                                    </div>
-                                    <div class="answer-wrapper">
-                                       <ul class="answer-list">
-                                          <li>Academic Writing</li>
-                                          <li>Comparative Ethics</li>
-                                          <li>Social Responsibility Project</li>
-                                       </ul>
-                                    </div>
-                                 </div>--}}
-                              </div>
-                           </div>
-                        </div>
+                        <!--<div>-->
+                        <!--   <div class="text-control-1">-->
+                        <!--      <div class="faqs-section">-->
+                        <!--         @foreach($course->courseModules as $module)-->
+                        <!--         <div class="faq accordion">-->
+                        <!--            <div class="question-wrapper">-->
+                        <!--               <div class="d-flex align-items-center">-->
+                        <!--                  <p class="question" title="">{{$module->title}}</p>-->
+                        <!--               </div>-->
+                        <!--               <i class="material-icons drop">expand_more</i>-->
+                        <!--            </div>-->
+                        <!--            <div class="answer-wrapper">-->
+                        <!--               <ul class="answer-list">-->
+                        <!--               {!! $module->description !!}-->
+                        <!--               </ul>-->
+                        <!--            </div>-->
+                        <!--         </div>-->
+                        <!--         @endforeach-->
+                        <!--         {{--<div class="faq accordion">-->
+                        <!--            <div class="question-wrapper">-->
+                        <!--               <div class="d-flex align-items-center">-->
+                        <!--                  <p class="question" title="">Elective Subjects</p>-->
+                        <!--               </div>-->
+                        <!--               <i class="material-icons drop">expand_more</i>-->
+                        <!--            </div>-->
+                        <!--            <div class="answer-wrapper">-->
+                        <!--               <ul class="answer-list">-->
+                        <!--                  <li>Advanced Java Programming</li>-->
+                        <!--                  <li>Communication Skills</li>-->
+                        <!--                  <li>Computer Forensic</li>-->
+                        <!--                  <li>Critical Thinking and Problem Solving Skills</li>-->
+                        <!--                  <li>Fundamental of English Grammar</li>-->
+                        <!--                  <li>Internet Security</li>-->
+                        <!--                  <li>Web Economy</li>-->
+                        <!--               </ul>-->
+                        <!--            </div>-->
+                        <!--         </div>-->
+                        <!--         <div class="faq accordion">-->
+                        <!--            <div class="question-wrapper">-->
+                        <!--               <div class="d-flex align-items-center">-->
+                        <!--                  <p class="question" title="">-->
+                        <!--                     Specialization subjects on software engineering-->
+                        <!--                  </p>-->
+                        <!--               </div>-->
+                        <!--               <i class="material-icons drop">expand_more</i>-->
+                        <!--            </div>-->
+                        <!--            <div class="answer-wrapper">-->
+                        <!--               <ul class="answer-list">-->
+                        <!--                  <li>Agile Software Development</li>-->
+                        <!--                  <li>Requirements Engineering</li>-->
+                        <!--                  <li>Software Constructions</li>-->
+                        <!--                  <li>Software Quality Assurance</li>-->
+                        <!--                  <li>Software Integration &amp; Improvement</li>-->
+                        <!--                  <li>Software Architecture &amp; Design</li>-->
+                        <!--                  <li>Software Engineering for Real Time-System</li>-->
+                        <!--                  <li>Software Testing</li>-->
+                        <!--                  <li>Software Engineering</li>-->
+                        <!--                  <li>Usability Engineering</li>-->
+                        <!--               </ul>-->
+                        <!--            </div>-->
+                        <!--         </div>-->
+                        <!--         <div class="faq accordion">-->
+                        <!--            <div class="question-wrapper">-->
+                        <!--               <div class="d-flex align-items-center">-->
+                        <!--                  <p class="question" title="">-->
+                        <!--                     University compulsory subjects-->
+                        <!--                  </p>-->
+                        <!--               </div>-->
+                        <!--               <i class="material-icons drop">expand_more</i>-->
+                        <!--            </div>-->
+                        <!--            <div class="answer-wrapper">-->
+                        <!--               <ul class="answer-list">-->
+                        <!--                  <li>Entrepreneurship in Asia</li>-->
+                        <!--                  <li>Information Literacy and Research Skills</li>-->
+                        <!--                  <li>Internet &amp; WWW</li>-->
+                        <!--               </ul>-->
+                        <!--            </div>-->
+                        <!--         </div>-->
+                        <!--         <div class="faq accordion">-->
+                        <!--            <div class="question-wrapper">-->
+                        <!--               <div class="d-flex align-items-center">-->
+                        <!--                  <p class="question" title="">-->
+                        <!--                     MQA Compulsory Subjects-->
+                        <!--                  </p>-->
+                        <!--               </div>-->
+                        <!--               <i class="material-icons drop">expand_more</i>-->
+                        <!--            </div>-->
+                        <!--            <div class="answer-wrapper">-->
+                        <!--               <ul class="answer-list">-->
+                        <!--                  <li>Academic Writing</li>-->
+                        <!--                  <li>Comparative Ethics</li>-->
+                        <!--                  <li>Social Responsibility Project</li>-->
+                        <!--               </ul>-->
+                        <!--            </div>-->
+                        <!--         </div>--}}-->
+                        <!--      </div>-->
+                        <!--   </div>-->
+                        <!--</div>-->
+                        <div id="accordion" class="accordion acd">
+        <div class="card mb-0">
+            <div class="card-header" data-toggle="collapse" href="#collapseOne" aria-expanded="true">
+                <a class="card-title">
+                    Q. What is the procedure of admission? 
+                </a>
+            </div>
+            <div id="collapseOne" class="card-body collapse show" data-parent="#accordion" style="">
+                
+                    After visiting the college you need to take an admission form and appear the ability test. After that an interview is taken, then you need to get admission by submitting all the required documents and admission amount.
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false">
+                <a class="card-title">
+                  Q. Does the college provide hostel and transportation facilities?
+                </a>
+            </div>
+            <div id="collapseTwo" class="card-body collapse" data-parent="#accordion" style="">
+                        Yes, we provide hostel facilities. But the transportation facilities are not provided.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false">
+                <a class="card-title">
+                  Q. Which University?
+                </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion" style="">
+                <div class="card-body">
+                    We are affiliated to Asia e University (AeU), COLLABORATIVE MULTINATIONAL UNIVERSITY, is globally recognized University, established under Asia Cooperation Dialogue (ACD) with support of 34 Asian countries.
+                </div>
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" href="#z">
+                <a class="card-title">
+                Q. What is the fee structure?
+                </a>
+            </div>
+            <div id="z" class="card-body collapse" data-parent="#accordion">
+                
+                    Please contact the admission officer for fee details.
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#y" aria-expanded="false">
+                <a class="card-title">
+                  Q. Is equivalent to TU and MOE registered?
+                </a>
+            </div>
+            <div id="y" class="card-body collapse" data-parent="#accordion">
+                                Yes, we are equivalent to TU and registered from Ministry of Education (MOE) Nepal.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#r" aria-expanded="false">
+                <a class="card-title">
+                  Q. What about the class timing for MBA?
+                </a>
+            </div>
+            <div id="r" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                We are running both the morning and the evening classes. Morning classes starts from 6:30 am to 8:30 am whereas evening classes starts from 5:45 pm to 7:45 pm
+      
+                </div>
+            </div>
+        </div>
+        <div class="card-header collapsed" data-toggle="collapse" href="#cc">
+                <a class="card-title">
+                    Q. Want to know more about BICT?
+                </a>
+            </div>
+            <div id="cc" class="card-body collapse" data-parent="#accordion">
+                
+                Bachelor of Information &amp; Communication Technology (BICT) with specialization in SOFTWARE ENGINEERING is globally high demanded professional program of new generation offering huge range of job opportunities with high paying remuneration after graduation. It is 4 years Hons. degree program that develops students' core skills to create innovative solutions for the digital world in every working sector.    
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#oo" aria-expanded="false">
+                <a class="card-title">
+                  Q. Are there any scholarships?
+                </a>
+            </div>
+            <div id="oo" class="card-body collapse" data-parent="#accordion">
+                        Yes, we are providing different types of scholarships. To know more contact the office of admission.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee" aria-expanded="false">
+                <a class="card-title">
+                  Q. When is Virinchi College established?
+                </a>
+            </div>
+            <div id="eee" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                            Virinchi college is established in 2013.
+
+                </div>
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#ooo" aria-expanded="false">
+                <a class="card-title">
+                  Q. What program are offered at Virinchi college?
+                </a>
+            </div>
+            <div id="ooo" class="card-body collapse" data-parent="#accordion">
+                        We offer BICT (Bachelors of Information and Communication Technology) specialization in Software Engineering and MBA (Master in Business Administration) in Entrepreneurship.
+
+                
+            </div>
+            <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#p" aria-expanded="false">
+                <a class="card-title">
+                  Q. Does Virinchi provides Internships and job placements?
+                </a>
+            </div>
+            <div id="p" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                            Yes, we assist our students for internship and job placement within our recruitment partner organizations.
+
+                </div>
+            </div>
+            
+    </div>
                      </div>
                   </div>
                </div>

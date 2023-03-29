@@ -4573,7 +4573,7 @@
     content: "\f068";
     right: 20px;
     top: 50%;
-    transform: translateY(-50%);
+    /*transform: translateY(-50%);*/
     text-align: center;
     font-size: 12px;
     color: #bb0b0b;
@@ -6511,7 +6511,7 @@ background: #CF171F;
 
 
 #scope{
-    margin-top:0px;
+    margin-top:50px;
     margin-bottom: 10px;
     padding-top:0;
 }
@@ -6785,7 +6785,8 @@ background: #CF171F;
     margin-bottom:80px!important;
 }
 #newcontact{
-    padding-top:40px;
+    padding-top:60px;
+    padding-bottom:60px;
 }
 .alert-danger,.alert-success{
     color: #fff;
@@ -6851,7 +6852,52 @@ background: #CF171F;
 .newbict h2{
     width:55%;
 }
+.acd .card-header.collapsed:after{
+    content:'\f106';
+    transition:all 0.3s ease-out 0s;
+    transform:rotate(180deg);
+    font-size:20px;
+}
+.acd .card-header:after{
+    content:'\f107';
+    transition:all 0.3s ease-out 0s;
+    /*font-size:2rem;*/
+    font-size:20px;
+    position:static;
+    transform:rotate(-180deg);
+}
+.acd .card-header{
+   background-color: #fff;
+    color: #494949;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 8%);
+    border-radius: 0px;
+    height:75px;
+}
+.acd .card-header:hover{
+    background:#818285;
+    border-radius:0;
     
+}
+.acd .card-header:hover a{
+    color:#fff!important;
+}
+.acd .card{
+    border:none;
+    box-shadow:none;
+}
+.acd .card-header a{
+    text-transform:uppercase;
+}
+.acd{
+    box-shadow:none;
+}
     
 
 
