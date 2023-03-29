@@ -7,7 +7,7 @@
  <!-- Banner Start -->
       <div class="banner nc ba">
          <div class="container">
-            <div class="banner-wrapper newbannerwrapper">
+            <div class="banner-wrapper newbannerwrapper newbict">
                <h2>
                   people to cities<br>
                   watches to cars<br>
