@@ -7,7 +7,7 @@
  <!-- Banner Start -->
       <div class="banner nc ba">
          <div class="container">
-            <div class="banner-wrapper newbannerwrapper">
+            <div class="banner-wrapper newbannerwrapper newbict">
                <h2>
                   {!! $course->banner_text !!}
                </h2>
