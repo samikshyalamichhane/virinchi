@@ -279,14 +279,13 @@
                                     <div id="accordion" class="accordion">
                                        <div class="card mb-0" >
                                           @foreach($faqs as $key=>$faq)
-                                          <div class="card-header collapsed" data-toggle="collapse" href="#collapse{{$faq->slug}}">
+                                          <div class="card-header collapsed " data-toggle="collapse" href="#collapse{{$faq->slug}}">
                                              <a class="card-title">
                                                 Q. {{$faq->question}}
                                              </a>
                                           </div>
                                           <div id="collapse{{$faq->slug}}" class="card-body collapse" data-parent="#accordion">
                                              {!! $faq->answers !!}
-
                                           </div>
                                           @endforeach
                                           {{--<div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
@@ -296,8 +295,6 @@
                                           </div>
                                           <div id="collapseTwo" class="card-body collapse" data-parent="#accordion">
                                              Yes, we provide hostel facilities. But the transportation facilities are not provided.
-
-
                                           </div>
                                           <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
                                              <a class="card-title">

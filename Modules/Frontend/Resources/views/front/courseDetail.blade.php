@@ -500,10 +500,10 @@
                   <h5>TAKE THE NEXT STEP</h5>
                   <div class="row ns">
                      <div class="col-md-3 text-center visit">
-                        <a class="btn primary-btn" href="#" >Visit Us<img class="ar" src="{{asset('front/assets/img/arrow-right-white.svg')}}" style="float:right"></a>
+                        <a class="btn primary-btn" href="{{route('requestInfo')}}#scope" >Visit Us<img class="ar" src="{{asset('front/assets/img/arrow-right-white.svg')}}" style="float:right"></a>
                      </div>
                      <div class="col-md-3 text-center visit">
-                        <a class="btn primary-btn" href="how-to-apply.php">Admission Information <img class="ar" src="{{asset('front/assets/img/arrow-right-white.svg')}}" style="float:right"></i>
+                        <a class="btn primary-btn" href="{{route('howToApply')}}">Admission Information <img class="ar" src="{{asset('front/assets/img/arrow-right-white.svg')}}" style="float:right"></i>
                         </a>
                      </div>
                   </div>

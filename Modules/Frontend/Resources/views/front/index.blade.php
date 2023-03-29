@@ -328,7 +328,7 @@
                     <a href="{{route('techNewsDetail',$new->slug)}}" class="play">
                       <a href="{{route('techNewsDetail',$new->slug)}}"><img class="vh" src="https://img.youtube.com/vi/{{$new->youtubeVideo($new->video)}}/0.jpg" alt="" class="img-fluid" /></a>
                       <a href="{{route('techNewsDetail',$new->slug)}}" class="play">
-                        <img src="https://img.youtube.com/vi/{{$new->youtubeVideo($new->video)}}/0.jpg" alt="" class="img-fluid">
+                        <img src="{{asset('front/assets/img/video-play.png')}}" alt="" class="img-fluid">
                       </a>
                     </a>
                     <!--<img src="https://img.youtube.com/vi/rRZfY6s9gkM/hqdefault.jpg" alt="" class="img-fluid tech-img" />-->
@@ -408,7 +408,7 @@
                     </h6>
                   </a>
                   <div class="event__card--date">
-                    <p>{{ \Carbon\Carbon::parse($event->from_date)->isoFormat('MMM')}}<span>{{ \Carbon\Carbon::parse($event->from_date)->isoFormat('Do')}}</span></p>
+                    <p>{{ \Carbon\Carbon::parse($event->from_date)->isoFormat('MMM')}}<span>{{ \Carbon\Carbon::parse($event->from_date)->isoFormat('D')}}</span></p>
                   </div>
                 </div>
               </div>
