@@ -315,7 +315,7 @@
             </h2>
             <a href="{{route('techNews')}}"></a>
           </div>
-          <div class="pull-right">
+          <div class="pull-right button-wrapper lm">
               <a href="{{route('techNews')}}">Learn More
                 <img src="{{asset('front/assets/img/arrow-right-lg.svg')}}" alt="" class="img-fluid event-img" /></a>
             </div>

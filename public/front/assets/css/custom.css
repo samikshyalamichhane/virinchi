@@ -6907,6 +6907,16 @@ background: #CF171F;
     margin-top: 50px;
     margin-bottom:20px;
 }
+.nmn p span{
+    background:none!important;
+    color:#fff!important;
+}
+.lm a:hover{
+    color:var(--color-dark);
+}
+.lm img{
+    padding-left:50px;
+}
     
 
 

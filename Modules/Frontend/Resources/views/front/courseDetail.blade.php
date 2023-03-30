@@ -5,9 +5,9 @@
 @endpush
 @section('content')
 <!-- Banner Start -->
-<div class="banner nc ba">
+<div class="banner nc ba newmbaa">
    <div class="container">
-      <div class="banner-wrapper newbannerwrapper newbict">
+      <div class="banner-wrapper newbannerwrapper newbict nmn">
          <h2>
             {!! $course->banner_text !!}
          </h2>
