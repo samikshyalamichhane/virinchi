@@ -513,7 +513,7 @@
                            FAQS
                         </a>
                      </div>
-                     <div id="z" class="card-body collapse" data-parent="#accordion">
+                     <div id="z" class="card-body collapse" data-parent="#accordion1">
                         @foreach($faqs as $key=>$faq)
                         <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion{{$key}}" href="#{{$key}}" aria-expanded="false">
                            <a class="card-title">
