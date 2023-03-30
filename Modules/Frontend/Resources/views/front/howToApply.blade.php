@@ -497,57 +497,65 @@
                      </div>
                      <div id="collapseThree" class="collapse" data-parent="#accordion" style="">
                         <div class="card-body">
-                              @foreach($docs as $doc)
-                              <ul class="answer-list">
-                                 <div class="row mb-2 mt-3">
-                                    <h6>{{$doc->title}}</h6>
-                                 </div>
-                                 {!! $doc->description !!}
-                                 <hr>
-                              </ul>
-                              @endforeach
+                           @foreach($docs as $doc)
+                           <ul class="answer-list">
+                              <div class="row mb-2 mt-3">
+                                 <h6>{{$doc->title}}</h6>
+                              </div>
+                              {!! $doc->description !!}
+                              <hr>
+                           </ul>
+                           @endforeach
                         </div>
                      </div>
-                     <div class="card-header collapsed" data-toggle="collapse" href="#z">
+                     <div class="card-header collapsed" data-toggle="collapse" href="#z" aria-expanded="false">
                         <a class="card-title">
                            FAQS
                         </a>
                      </div>
                      <div id="z" class="card-body collapse" data-parent="#accordion">
                         @foreach($faqs as $key=>$faq)
-                     <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion1" href="#{{$key}}" aria-expanded="false">
-                        <a class="card-title">
-                           Q. {{$faq->question}}
-                        </a>
-                     </div>
-                     <div id="{{$key}}" class="card-body collapse" data-parent="#accordion1">
-                        {!! $faq->answers !!}
-                     </div>
-                     @endforeach
+                        <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion{{$key}}" href="#{{$key}}" aria-expanded="false">
+                           <a class="card-title">
+                              Q. {{$faq->question}}
+                           </a>
+                        </div>
+                        <div id="{{$key}}" class="card-body collapse" data-parent="#accordion{{$key}}">
+                           {!! $faq->answers !!}
+                        </div>
+                        @endforeach
 
                      </div>
                   </div>
-                  <!-- <div class="card-header collapsed" data-toggle="collapse" href="#cc">
+                  <div class="card-header collapsed" data-toggle="collapse" href="#cc" aria-expanded="false">
                      <a class="card-title">
                         Q. Want to know more about BICT?
                      </a>
                   </div>
                   <div id="cc" class="card-body collapse" data-parent="#accordion">
 
-                     Bachelor of Information &amp; Communication Technology (BICT) with specialization in SOFTWARE ENGINEERING is globally high demanded professional program of new generation offering huge range of job opportunities with high paying remuneration after graduation. It is 4 years Hons. degree program that develops students' core skills to create innovative solutions for the digital world in every working sector.
+                     <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion1" href="#oo" aria-expanded="false">
+                        <a class="card-title">
+                           Q. Are there any scholarships?
+                        </a>
+                     </div>
+                     <div id="oo" class="card-body collapse" data-parent="#accordion1">
+                        Yes, we are providing different types of scholarships. To know more contact the office of admission.
+                     </div>
+                     <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion1" href="#eee" aria-expanded="false">
+                        <a class="card-title">
+                           Q. When is Virinchi College established?
+                        </a>  
+                     </div>
+                     <div id="eee" class="collapse" data-parent="#accordion1">
+                        <div class="card-body">
+                           Virinchi college is established in 2013.
 
+                        </div>
+                     </div>
                   </div>
-                  <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#oo" aria-expanded="false">
-                     <a class="card-title">
-                        Q. Are there any scholarships?
-                     </a>
-                  </div>
-                  <div id="oo" class="card-body collapse" data-parent="#accordion">
-                     Yes, we are providing different types of scholarships. To know more contact the office of admission.
 
-
-                  </div>
-                  <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee" aria-expanded="false">
+                  <!-- <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee" aria-expanded="false">
                      <a class="card-title">
                         Q. When is Virinchi College established?
                      </a>

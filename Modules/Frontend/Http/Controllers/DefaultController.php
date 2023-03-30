@@ -26,12 +26,18 @@ use Modules\EducationModel\Entities\EducationModel;
 use Modules\ExperienceVirinchi\Entities\ExperienceVirinchi;
 use Modules\Faq\Entities\Faq;
 use Modules\Frontend\Entities\Appointment;
+use SEOMeta;
+use OpenGraph;
 
 class DefaultController extends Controller
 {
     use ValidatesRequests;
 
     public function index(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
+        
         $testimonials = Testimonial::where('publish', 1)->orderBy('created_at', 'DESC')->get();
         $news = TechNews::where('publish',1)->get();
         $events = News::where('publish',1)->get();
@@ -46,11 +52,17 @@ class DefaultController extends Controller
     }
 
     public function courseDetail($slug){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $course = Course::with('courseGalleries','courseModules','courseAttributes')->where('slug',$slug)->first();
         return view('frontend::front.courseDetail',compact('course'));
     }
 
     public function howToApply(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','admissions')->firstOrFail();
         $admissions = Admission::where('publish',1)->latest()->take(2)->get();
         $faqs = Faq::where('publish',1)->latest()->get();
@@ -58,6 +70,9 @@ class DefaultController extends Controller
         return view('frontend::front.howToApply',compact('detail','admissions','faqs','docs'));
     }
     public function college(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','college')->firstOrFail();
         $college = College::first();
         $details = EducationModel::where('publish',1)->get();
@@ -65,25 +80,40 @@ class DefaultController extends Controller
         // return view('frontend::front.college',compact('detail'));
     }
     public function ictMela(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','ict-mela')->firstOrFail();
         $details = IctMela::latest()->where('publish',1)->get();
         $gallery = ImageGallery::with('imagess')->where('slug','ict-mela')->first();
         return view('frontend::front.ictMela',compact('details','gallery','detail'));
     }
     public function clubs(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','clubs')->firstOrFail();
         $clubs = Club::published()->get();
         return view('frontend::front.clubs',compact('clubs','detail'));
     }
     public function affiliation(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','affiliation')->firstOrFail();
         return view('frontend::front.affiliation',compact('detail'));
     }
     public function aboutVirinchi(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','about-virinchi')->firstOrFail();
         return view('frontend::front.aboutVirinchi',compact('detail'));
     }
     public function makeAppointment(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         // $detail = Page::where('slug','make-an-appointment')->firstOrFail();
         return view('frontend::front.make-appointment');
     }
@@ -120,30 +150,56 @@ class DefaultController extends Controller
     }
     
     public function smartByIntellect(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','smart-by-intellect')->firstOrFail();
         $experiences = ExperienceVirinchi::where('publish',1)->latest()->get();
         return view('frontend::front.smartByIntellect',compact('detail','experiences'));
     }
     
     public function socialMediaHub(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','social-media-hub')->firstOrFail();
         return view('frontend::front.socialmediahub',compact('detail'));
     }
     
     
     public function applyNow(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         // $detail = Page::where('slug','how-to-apply')->firstOrFail();
         return view('frontend::front.applyNow');
     }
     public function techNews(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         return view('frontend::front.techNews');
     }
     public function techNewsdetail($slug){
+
         $news = TechNews::where('slug',$slug)->first();
+        SEOMeta::setTitle($news->meta_title ?$news->meta_title : $news->title);
+        SEOMeta::setDescription(strip_tags($news->meta_description));
+        SEOMeta::setCanonical(url()->current());
+        SEOMeta::addMeta('article:published_time', $news->created_at->toW3CString(), 'property');
+        SEOMeta::addKeyword($news->keyword);
+        OpenGraph::setDescription(strip_tags($news->description));
+        OpenGraph::setTitle($news->title);
+        OpenGraph::setUrl(url()->current());
+        OpenGraph::addProperty('type', 'Tech News');
+    OpenGraph::addImage('https://img.youtube.com/vi/{{$news->youtubeVideo($new->video)}}/0.jpg');
         $moreTechNews = TechNews::where('id','!=',$news->id)->get();
         return view('frontend::front.techNewsDetail',compact('news','moreTechNews'));
     }
     public function events(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $events = News::latest()->where('publish',1)->get();
         return view('frontend::front.eventsListing',compact('events'));
     }
@@ -162,6 +218,9 @@ class DefaultController extends Controller
         }
     }
     public function requestInfo(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $page = Page::where('slug','request-information')->firstOrFail();
         return view('frontend::front.requestInfo',compact('page'));
     }
@@ -250,6 +309,9 @@ class DefaultController extends Controller
         return redirect()->back()->with('message','Message Sent Successfully');
     }
     public function enrollmentForm(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         return view('frontend::front.enrollmentForm');
     }
     public function saveEnrollMentForm(Request $request){
@@ -309,6 +371,9 @@ class DefaultController extends Controller
 
     }
     public function visitUs(){
+        SEOMeta::setTitle('Virinchi College – Smart By Intellect');
+        SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
+        SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','visit-us')->firstOrFail();
         return view('frontend::front.visitUs',compact('detail'));
     }

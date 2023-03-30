@@ -404,9 +404,9 @@
             </div>
 
             <div>
-                <input type="checkbox" id="question7" name="q" class="questions">
+                <input type="checkbox" id="question8" name="q" class="questions">
                 <div class="plus">+</div>
-                <label for="question7" class="question font-weight-bold">
+                <label for="question8" class="question font-weight-bold">
                     VISIT PAGE INFORMATION:
                 </label>
                 <div class="answers">

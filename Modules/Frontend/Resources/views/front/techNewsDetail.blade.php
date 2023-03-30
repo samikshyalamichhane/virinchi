@@ -17,6 +17,7 @@
             <div class="button-wrapper nbw yv">
                 <a class="btn primary-btn" href="https://youtu.be/{{$news->youtubeVideo($news->video)}}">Subscribe Now</a>
             </div>
+            <div class="sharethis-inline-share-buttons"></div>
 
         </div>
     </div>

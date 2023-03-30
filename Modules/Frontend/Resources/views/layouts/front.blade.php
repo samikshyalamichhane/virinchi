@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Virinchi College – Smart By Intellect</title>
-  <meta name="description" content="" />
+  {!! SEOMeta::generate() !!}
+    {!! OpenGraph::generate() !!}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" type="image/x-icon" href="{{asset('front/assets/img/favicon.png')}}" />
 
@@ -203,6 +203,7 @@ TOP</a>
   <!-- GSAP -->
   <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=64255fb198f2350019afb804&product=inline-share-buttons&source=platform" async="async"></script>
 
   <!--  main JS -->
   <script src="{{asset('front/assets/js/main.js')}}"></script>
