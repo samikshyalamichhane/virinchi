@@ -140,7 +140,6 @@
                         <h5 class="footer-heading-title">VIRINCHI</h5>
                         <p class="footer-about">
                           {!! $dashboard_site->footer_desc !!}
-                            <!-- Out of 1008 names of Lord Shiva, Virinchi is one which signifies Bramha, the creator of knowledge and wisdom. -->
                         </p>
                     </div>
 
@@ -156,7 +155,7 @@
                             
                              <li><a href="{{route('eventsListing')}}">Events</a></li>
                               <li><a href="{{route('techNews')}}">News</a></li>
-                              <li><a href="{{route('howToApply')}}#faqsection">FAQs</a></li>
+                              <li><a href="{{route('howToApply')}}">FAQs</a></li>
                             <!--<li><a href="#">Downloads</a></li>-->
                             <!--<li><a href="#">Faculty</a></li>-->
                             <!--<li><a href="#">Alumni</a></li>-->

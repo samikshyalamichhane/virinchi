@@ -21,6 +21,10 @@
             </div>
             <div class="col-md-9 sharethis-inline-share-buttons"></div>
             </div>
+            <br>
+            <div class="row">
+                {!! $news->description !!}
+            </div>
         </div>
     </div>
     <!-- Details End -->
