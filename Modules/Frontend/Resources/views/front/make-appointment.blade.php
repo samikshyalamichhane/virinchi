@@ -12,7 +12,7 @@
 <nav aria-label="breadcrumb">
  <ol class="breadcrumb">
  <!--<li class="breadcrumb-item"><a href="#">Home</a></li>-->
-<li class="breadcrumb-item"><a href="#">Request Information</a></li>
+<li class="breadcrumb-item"><a href="{{route('requestInfo')}}">Request Information</a></li>
  <li class="breadcrumb-item active" aria-current="page">Make an appointment</li>
 </ol>
 </nav>
