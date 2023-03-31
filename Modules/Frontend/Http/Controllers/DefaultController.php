@@ -42,7 +42,8 @@ class DefaultController extends Controller
         $news = TechNews::where('publish',1)->get();
         $events = News::where('publish',1)->get();
         $courses = Course::where('publish',1)->get();
-        return view('frontend::front.index',compact('testimonials','news','events','courses'));
+        $gallery = ImageGallery::with('imagess')->where('slug','life-at-virinchi')->first();
+        return view('frontend::front.index',compact('testimonials','news','events','courses','gallery'));
     }
     public function bict(){
         return view('frontend::front.bict');
@@ -178,7 +179,9 @@ class DefaultController extends Controller
         SEOMeta::setTitle('Virinchi College – Smart By Intellect');
         SEOMeta::setDescription(strip_tags('Virinchi College – Smart By Intellect'));
         SEOMeta::setCanonical(url()->current());
-        return view('frontend::front.techNews');
+        $techNews = TechNews::where('publish',1)->get();
+        $detail = Page::where('slug','tech-news')->first();
+        return view('frontend::front.techNews',compact('techNews','detail'));
     }
     public function techNewsdetail($slug){
 
@@ -192,7 +195,8 @@ class DefaultController extends Controller
         OpenGraph::setTitle($news->title);
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'Tech News');
-    OpenGraph::addImage('https://img.youtube.com/vi/{{$news->youtubeVideo($news->video)}}/0.jpg');
+        $img = $news->youtubeVideo($news->video);
+        OpenGraph::addImage('https://img.youtube.com/vi/'.$img.'/0.jpg');
         $moreTechNews = TechNews::where('id','!=',$news->id)->get();
         return view('frontend::front.techNewsDetail',compact('news','moreTechNews'));
     }

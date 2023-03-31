@@ -90,7 +90,7 @@
                      <figure class="gallery-image gallery-image--1x1 loaded" id="image{{$key++}}">
                         <a href="#image{{$key++}}">
                            <div class="gallery-image__crop" tabindex="-1">
-                              <img class="gallery-image__media lazyloaded" alt="learning with fun" src="{{Storage::url('images/gallery/'.$image->image)}}" />
+                              <img class="gallery-image__media lazyloaded" alt="{{$image->img_desc}}" src="{{Storage::url('images/gallery/'.$image->image)}}" />
                            </div>
                            <figcaption class="gallery-image__caption">
                               {{$image->img_desc}}

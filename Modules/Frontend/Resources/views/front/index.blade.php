@@ -103,18 +103,20 @@
 
       <div class="gallery-content">
         <div class="gallery-images">
-          <figure class="gallery-image gallery-image--1x1 loaded" id="image1">
-            <a href="#image1">
+          @foreach($gallery->imagess->where('publish',1) as $key=>$image)
+          <figure class="gallery-image gallery-image--1x1 loaded" id="image{{$key++}}">
+            <a href="#image{{$key++}}">
               <div class="gallery-image__crop" tabindex="-1">
-                <img class="gallery-image__media lazyloaded" alt="Preparing Home Automation For Exhibition" src="{{asset('front/assets/img/life/life-5.jpg')}}" />
+                <img class="gallery-image__media lazyloaded" alt="{{$image->img_desc}}" src="{{Storage::url('images/gallery/'.$image->image)}}" />
               </div>
               <figcaption class="gallery-image__caption">
-                Celebrating Convocation 2022
+              {{$image->img_desc}}
               </figcaption>
             </a>
           </figure>
+          @endforeach
 
-          <figure class="gallery-image gallery-image--1x1 loaded" id="image2">
+          {{--<figure class="gallery-image gallery-image--1x1 loaded" id="image2">
             <a href="#image2">
               <div class="gallery-image__crop" tabindex="-1">
                 <img class="gallery-image__media lazyloaded" alt="Virinchians' together" src="{{asset('front/assets/img/life/life-2.jpg')}}" />
@@ -178,7 +180,7 @@
                 Students' happy moment at college event
               </figcaption>
             </a>
-          </figure>
+          </figure>--}}
         </div>
       </div>
     </div>

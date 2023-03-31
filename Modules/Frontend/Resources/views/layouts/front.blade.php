@@ -154,8 +154,8 @@
                             <li><a href="{{route('clubs')}}">Clubs</a></li>
                             <!--<li><a href="#">Careers</a></li>-->
                             
-                             <li><a href="#">Events</a></li>
-                              <li><a href="#">News</a></li>
+                             <li><a href="{{route('eventsListing')}}">Events</a></li>
+                              <li><a href="{{route('techNews')}}">News</a></li>
                               <li><a href="{{route('howToApply')}}#faqsection">FAQs</a></li>
                             <!--<li><a href="#">Downloads</a></li>-->
                             <!--<li><a href="#">Faculty</a></li>-->
