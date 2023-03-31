@@ -14,11 +14,13 @@
         <div class="container">
             <!--<iframe width="100%" height="500" src="https://www.youtube.com/watch?v=7AW97Or_Quk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
             <iframe width="100%" height="500" src="{{$news->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div class="button-wrapper nbw yv">
+            <div class="row">
+            <div class="col-md-3 button-wrapper nbw yv">
+                <!--<div class="g-ytsubscribe" data-channelid="UC6capKoPkfIdyQEk76Yhbcg" data-layout="full" data-theme="dark" data-count="hidden"></div>-->
                 <a class="btn primary-btn" href="https://youtu.be/{{$news->youtubeVideo($news->video)}}">Subscribe Now</a>
             </div>
-            <div class="sharethis-inline-share-buttons"></div>
-
+            <div class="col-md-9 sharethis-inline-share-buttons"></div>
+            </div>
         </div>
     </div>
     <!-- Details End -->

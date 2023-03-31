@@ -773,6 +773,11 @@
     height:120px;
     object-fit: cover;
     border-radius: 50%;
+    transform:scale(1.4);
+    margin-left:30px;
+  }
+  .testimonial__swiper--card .media .media-body{
+      margin-left:20px;
   }
 
   .testimonial__swiper--card .media h5 {
@@ -6647,7 +6652,7 @@ background: #CF171F;
     text-transform:capitalize;
 }
 .yv{
-    margin:50px 0 20px 0;
+    margin:50px 0 0 0;
     width:15%;
 }
 #faq-apply{
@@ -6928,6 +6933,9 @@ background: #CF171F;
     border: 1px solid transparent!important;
     color: var(--color-white)!important;
 }    
+.sharethis-inline-share-buttons{
+    margin:50px 0 0 0;
+}
 
 
 
