@@ -7,7 +7,7 @@
   {!! SEOMeta::generate() !!}
     {!! OpenGraph::generate() !!}
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="shortcut icon" type="image/x-icon" href="{{asset('front/assets/img/favicon.png')}}" />
+  <link rel="shortcut icon" type="image/x-icon" href="{{ Storage::url($dashboard_site->fav_icon) ? Storage::url($dashboard_site->fav_icon) : asset('front/assets/img/favicon.png')}}" />
 
   <!-- CSS here -->
   <link rel="stylesheet" href="{{asset('front/assets/css/bootstrap.min.css')}}" />
@@ -35,7 +35,7 @@
             <div class="menu-wrapper">
                <!-- Logo -->
                <div class="logo">
-                  <a href="{{route('home')}}"><img src="{{asset('front/assets/img/logo.png')}}" alt="" class="logo-img" /></a>
+                  <a href="{{route('home')}}"><img src="{{Storage::url($dashboard_site->logo) ? Storage::url($dashboard_site->logo) : asset('front/assets/img/logo.png')}}" alt="" class="logo-img" /></a>
                </div>
                <!-- Main-menu -->
                <div class="main-menu d-none d-lg-block">

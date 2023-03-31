@@ -8,6 +8,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Modules\Club\Entities\Club;
+use Modules\Frontend\Entities\Appointment;
+use Modules\Frontend\Entities\Enrollment;
+use Modules\Frontend\Entities\RequestInfo;
 use Modules\IctMela\Entities\IctMela;
 use Modules\News\Entities\News;
 use Modules\TechNews\Entities\TechNews;
@@ -47,6 +50,9 @@ class AdminLoginController extends Controller
         $ictmela = IctMela::count();
         $users = User::count();
         $testimonial = Testimonial::count();
-        return view('dashboard',compact('technews','events','club','ictmela','users','testimonial'));
+        $requestInfos = RequestInfo::get();
+        $appointments = Appointment::get();
+        $enrollments = Enrollment::get();
+        return view('dashboard',compact('technews','events','club','ictmela','users','testimonial','requestInfos','appointments','enrollments'));
     }
 }

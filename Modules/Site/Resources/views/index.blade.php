@@ -451,7 +451,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4">
+                        {{--<div class="col-sm-4">
                             <label class="col-form-label">Footer Logo</label>
                             <div class="col-form-label">
                                 <div class="row">
@@ -464,7 +464,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
                         <div class="col-sm-4">
                             <label class="col-form-label">Fav Icon</label>
                             <div class="col-form-label">
@@ -480,7 +480,7 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        {{--<div class="col-sm-4">
                             <label class="col-form-label">About Page Banner Image</label>
                             <div class="col-form-label">
                                 <div class="row">
@@ -493,7 +493,7 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div>--}}
 
                         {{--<div class="col-sm-4">
                             <label class="col-form-label">Smart By Intellect Banner Image</label>

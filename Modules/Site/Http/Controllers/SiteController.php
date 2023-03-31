@@ -66,6 +66,7 @@ class SiteController extends Controller
         $site->twitter = $request->twitter;
         $site->linkedin = $request->linkedin;
         $site->instagram = $request->instagram;
+        $site->tiktok = $request->tiktok;
 
         $site->application_fee_desc = $request->application_fee_desc;
         $site->application_fee = $request->application_fee;

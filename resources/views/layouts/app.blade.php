@@ -7,8 +7,8 @@
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <!-- Favicon -->
-    <link href="{{ asset('frontend/img/favicon.ico') }}" rel="icon">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ Storage::url($dashboard_site->fav_icon) ? Storage::url($dashboard_site->fav_icon) : asset('front/assets/img/favicon.png')}}" />
+
 
     <!-- CoreUI CSS -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" crossorigin="anonymous">
