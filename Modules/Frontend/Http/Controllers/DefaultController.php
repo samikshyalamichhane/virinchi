@@ -66,7 +66,7 @@ class DefaultController extends Controller
         SEOMeta::setCanonical(url()->current());
         $detail = Page::where('slug','admissions')->firstOrFail();
         $admissions = Admission::where('publish',1)->latest()->take(2)->get();
-        $faqs = Faq::where('publish',1)->latest()->get();
+        $faqs = Faq::where('publish',1)->get();
         $docs = DocumentCheckList::where('publish',1)->latest()->get();
         return view('frontend::front.howToApply',compact('detail','admissions','faqs','docs'));
     }
