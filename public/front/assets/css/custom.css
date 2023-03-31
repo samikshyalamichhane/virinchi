@@ -6628,10 +6628,13 @@ background: #CF171F;
 }
 
 #accordion a{
-    font-weight:normal;
-    font-size:1rem;
-    color:#494949;
-    padding:0;
+    font-size: 18px;
+    color: #ce181e;
+    line-height: 1.5;
+    
+    margin-bottom: 0;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 #accordion .card-header{
     padding:20px 30px 0 18px;
@@ -6936,7 +6939,12 @@ background: #CF171F;
 .sharethis-inline-share-buttons{
     margin:50px 0 0 0;
 }
-
+#z a{
+    font-size:18px;
+}
+#z p{
+    font-size:16px;
+}
 
 
 
