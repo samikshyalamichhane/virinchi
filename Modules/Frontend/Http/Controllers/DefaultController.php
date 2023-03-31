@@ -192,7 +192,8 @@ class DefaultController extends Controller
         OpenGraph::setTitle($news->title);
         OpenGraph::setUrl(url()->current());
         OpenGraph::addProperty('type', 'Tech News');
-    OpenGraph::addImage('https://img.youtube.com/vi/{{$news->youtubeVideo($news->video)}}/0.jpg');
+        $img = $news->youtubeVideo($news->video);
+        OpenGraph::addImage('https://img.youtube.com/vi/'.$img.'/0.jpg');
         $moreTechNews = TechNews::where('id','!=',$news->id)->get();
         return view('frontend::front.techNewsDetail',compact('news','moreTechNews'));
     }
