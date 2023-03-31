@@ -35,7 +35,7 @@
             <div class="menu-wrapper">
                <!-- Logo -->
                <div class="logo">
-                  <a href="{{route('home')}}"><img src="{{Storage::url($dashboard_site->logo) ? Storage::url($dashboard_site->logo) : asset('front/assets/img/logo.png')}}" alt="" class="logo-img" /></a>
+                  <a href="{{route('home')}}"><img src="{{Storage::url($dashboard_site->logo) }}" alt="" class="logo-img" /></a>
                </div>
                <!-- Main-menu -->
                <div class="main-menu d-none d-lg-block">
