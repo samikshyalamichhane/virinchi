@@ -126,11 +126,11 @@
                                 <!--<li><a href="#">Privacy</a></li>-->
                                 <li><a href="{{route('socialMediaHub')}}">Social Media Hub</a></li>
                                  <!--<div class="socail-media"> -->
-                                <li class="facebook"><a href="{{$dashboard_site->facebook}}"><i class="fa fa-facebook"></i></a></li>
-                                <li class="youtube"><a href="{{$dashboard_site->youtube}}"><i class="fa fa-youtube-play"></i></a></li>
+                                <li class="facebook"><a href="{{$dashboard_site->facebook}}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li class="youtube"><a href="{{$dashboard_site->youtube}}" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
                                 <!-- <a href="{{$dashboard_site->linkedin}}"><i class="fa fa-linkedin"></i></a> -->
-                                <li class="instagram"><a href="{{$dashboard_site->instagram}}"><i class="fa fa-instagram"></i></a></li>
-                                <li class="tiktok"><a href="{{$dashboard_site->tiktok}}"><i class="fab fa-tiktok"></i></a></li>
+                                <li class="instagram"><a href="{{$dashboard_site->instagram}}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                <li class="tiktok"><a href="{{$dashboard_site->tiktok}}" target="_blank"><i class="fab fa-tiktok"></i></a></li>
                                  <!--</div> -->
                             </ul>
                         </div>

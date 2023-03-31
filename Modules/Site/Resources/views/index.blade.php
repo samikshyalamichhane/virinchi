@@ -150,12 +150,12 @@
                                 <input type="text" name="instagram" class="form-control" value="{{ $site->instagram }}" placeholder="Enter instagram Link">
                             </div>
                         </div>
-                        <div class="col-sm-6">
+                        <!-- <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="linkedin">LinkedIn</label>
                                 <input type="text" name="linkedin" class="form-control" value="{{ $site->linkedin }}" placeholder="Enter LinkedIn Link">
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="tiktok">Tiktok</label>
