@@ -434,7 +434,7 @@
          <div class="container">
             <div class="section-title mb-5">
                <!--<h3 class="course-title"><span>See Inside BICT</span></h3>-->
-               <h2>See Inside <span>BICT</span></h2>
+               <h2>See Inside <span>{{$course->short_title}}</span></h2>
             </div>
             <div class="gallery-content">
                <div class="gallery-images">
