@@ -14,18 +14,24 @@
                     <div class="card-header"><i class="fa fa-align-justify"></i> Edit Admission</div>
                     <div class="card-body">
                         <div class="row">
+                        <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="course_title">Course Title</label>
+                                    <input name="course_title" class="form-control" value="{{ $admission->course_title }}" required>
+                                </div>
+                            </div>
+
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="question">Question</label>
-                                    <input name="question" class="form-control" value="{{ $admission->question }}" required>
+                                    <label for="date">Date</label>
+                                    <input name="date" type="date" class="form-control" value="{{ $admission->date }}" required>
                                 </div>
                             </div>
                             
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="answers">Answers</label>
-                                    <textarea name="answers" class="form-control"
-                                        required>{{ $admission->answers }}</textarea>
+                                    <label for="status">Status</label>
+                                    <input name="status" type="text" class="form-control" value="{{ $admission->status }}" required>
                                 </div>
                             </div>
                         </div>

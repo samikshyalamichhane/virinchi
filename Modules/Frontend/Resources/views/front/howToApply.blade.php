@@ -527,7 +527,7 @@
 
                      </div>
                   </div>
-                  <div class="card-header collapsed" data-toggle="collapse" href="#cc" aria-expanded="false">
+                  <!-- <div class="card-header collapsed" data-toggle="collapse" href="#cc" aria-expanded="false">
                      <a class="card-title">
                         Q. Want to know more about BICT?
                      </a>
@@ -553,7 +553,7 @@
 
                         </div>
                      </div>
-                  </div>
+                  </div> -->
 
                   <!-- <div class="card-header collapsed" data-toggle="collapse" data-parent="#accordion" href="#eee" aria-expanded="false">
                      <a class="card-title">
@@ -597,7 +597,7 @@
                   <div class="right-graybox">
                      @foreach($admissions as $admission)
                      <div class="right-graybox-content mt-3 mb-5">
-                        <span>{{$admission->title}}</span>
+                        <span>{{$admission->course_title}}</span>
                         <h2>{{$admission->date->format('M. Y') }}</h2>
                         <p>{{$admission->status}}</p>
                      </div>
