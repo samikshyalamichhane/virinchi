@@ -5,7 +5,7 @@
 @endpush
 @section('content')
 <!-- Banner Start -->
-<div class="banner nc ba newmbaa">
+<!-- <div class="banner nc ba newmbaa">
    <div class="container">
       <div class="banner-wrapper newbannerwrapper newbict nmn">
          <h2>
@@ -13,7 +13,34 @@
          </h2>
       </div>
    </div>
-</div>
+</div> -->
+@if($course->short_title == 'BICT')
+<div class="banner nc ba">
+         <div class="container">
+            <div class="banner-wrapper newbannerwrapper">
+               <h2>
+               {!! $course->banner_text !!}
+                  <!-- people to cities<br>
+                  watches to cars<br>
+                  Everything need to be start<br>
+                  ict is one that makes everything smart -->
+               </h2>
+            </div>
+         </div>
+      </div>
+@endif
+@if($course->short_title == 'MBA')
+<div class="banner nc ba newmbaa">
+         <div class="container">
+            <div class="banner-wrapper newbannerwrapper nmn">
+               <h2>
+               <!-- {!! $course->banner_text !!} -->
+                  GROW<br><span>PROFESSIONALLY</span><br> <p>AT WORK OR AT BUSINESS</p>
+               </h2>
+            </div>
+         </div>
+      </div>
+@endif
 <!-- Banner End -->
 <!-- Course Navbar Start -->
 <div id="course-nav" class="course-nav dnn">
